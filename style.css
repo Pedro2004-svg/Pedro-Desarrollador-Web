@@ -39,7 +39,7 @@ header {
 }
 
 /* 3. ENLACES DEL MENÚ */
-a {
+header a {
     font-family: "Manrope", sans-serif;
     font-weight: 700; /* Corregido a Bold para interfaz */
     font-size: 14px;
@@ -51,7 +51,7 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
+header a:hover {
     color: #D4AF37; /* Cambiará por tu dorado más adelante */
 }
 
@@ -133,6 +133,7 @@ a:hover {
     font-weight: 700;
     color: #444;
     letter-spacing: 0.04em;
+    margin-right: 5px;
 }
 
 /* 7. DIVISORES DE SECCIÓN */
@@ -199,7 +200,7 @@ section {
 }
 
 .status-stats{
-    background-color: rgb(60, 255, 0);
+    background-color: rgb(42, 179, 0);
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -259,5 +260,144 @@ section {
 
 .contacto span{
     display: flex;
+    align-items: center;
     gap: 8px;
+}
+
+.ti-brand-github, .ti-brand-linkedin {
+    font-size: 20px;
+    color: #D4AF37;
+}
+
+.github{
+    margin-bottom: 5px;
+}
+
+.conocimientos-container{
+    margin-top: 20px;
+    display: flex;
+}
+
+.btn-inicio{
+    margin-top: 20px;
+}
+
+.btn-proyecto{
+    font-size: 14px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    padding: 10px 16px;
+    color: rgb(240, 240, 240);
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+.btn-cv {
+    font-size: 14px;          /* añade tamaño de letra */
+    background-color: #D4AF37;
+    padding: 10px 16px;       /* mismo padding que btn-proyecto */
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;            /* añade color de letra */
+    cursor: pointer;           /* el cursor cambia al pasar por encima */
+}
+
+.btn-proyecto:hover {
+    background-color: #3a3a3a;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cv:hover {
+    background-color: #C9A84C;  /* dorado más oscuro al pasar el ratón */
+    transition: background-color 0.3s ease;
+}
+
+.container-sobremi{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text{
+    max-width: 50%;
+}
+
+.labels{
+    display: flex;
+    align-items: center;
+}
+
+.text-label{
+    font-size: 15px;
+}
+.ti-shield-check, .ti-server, .ti-code{
+    font-size: 20px;
+    margin-right: 15px;
+    color: #D4AF37;
+    background-color: #FBF5DC;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.skills-about{
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    border-radius: 15px;
+    width: 45%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-skills{
+    display: flex;
+    gap: 20px;
+}
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    border-radius: 15px;
+    padding: 15px;
+    gap: 10px;
+    width: 100%;
+}
+
+.stats > span{
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+.line-proyects{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.proyect{
+    width: 100%;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 15px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.img{
+    height: 40%;
+    background-color: rgb(236, 236, 236);
+}
+
+.proyect-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 50%;
+    margin-left: 15px;
+    margin-top: 8px;
 }
