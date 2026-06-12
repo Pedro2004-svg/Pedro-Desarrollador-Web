@@ -264,7 +264,7 @@ section {
     gap: 8px;
 }
 
-.ti-brand-github, .ti-brand-linkedin {
+.github > .ti-brand-github, .linkdin > .ti-brand-linkedin {
     font-size: 20px;
     color: #D4AF37;
 }
@@ -366,6 +366,12 @@ section {
     width: 100%;
 }
 
+.stats {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben en una línea, bajan a la siguiente */
+    gap: 5px;
+}
+
 .stats > span{
     background-color: rgb(235, 235, 235);
     border-radius: 5px;
@@ -377,27 +383,154 @@ section {
 .line-proyects{
     display: flex;
     justify-content: space-between;
-    gap: 8px;
+    gap: 15px;
+    padding-top: 15px; 
+    padding-bottom: 25px;
 }
 
-.proyect{
+.proyect:nth-child(1) > .img{
+    background-color: #0B0D12;
+    background-image: 
+        linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Tamaño de los cuadrados de la red */
+}
+
+
+.proyect:nth-child(2) > .img{
+    background-color: #F5F5F5;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #F5F5F5,
+        #F5F5F5 10px,
+        #EAEAEA 10px,
+        #EAEAEA 20px
+    );
+}
+
+.proyect:nth-child(3) > .img{
+    background: linear-gradient(
+        135deg, 
+        #C59334 0%, 
+        #E2B653 20%, 
+        #F9D976 40%, 
+        #E2B653 60%, 
+        #C59334 80%, 
+        #A67B27 100%
+    );
+}
+
+.img {
+    flex: 0 0 140px; /* Altura exacta de 140px. Así el fondo siempre se ve en la misma proporción */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyect {
     width: 100%;
     border: 1px solid rgb(211, 211, 211);
     border-radius: 15px;
     overflow: hidden;
-    height: 250px;
+    min-height: 320px; /* Un poco más de espacio para que todo respire */
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: #ffffff; /* Evita que el fondo de la web se cuele en el texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.img{
-    height: 40%;
-    background-color: rgb(236, 236, 236);
+.proyect:hover{
+    animation: balanceo 0.6s ease-in-out forwards;
 }
 
-.proyect-text{
+@keyframes balanceo {
+    0%   { transform: scale(1) rotate(0deg) translateX(0); }
+    15%  { transform: scale(1.05) rotate(2.5deg) translateX(2px); } 
+    35%  { transform: scale(1.05) rotate(-2.5deg) translateX(-2px); }
+    55%  { transform: scale(1.05) rotate(1.5deg) translateX(1.5px); } 
+    75%  { transform: scale(1.05) rotate(-1deg) translateX(-1px); }  /* Tercer balanceo aún más suave */
+    100% { transform: scale(1.05) rotate(0deg) translateX(0); }      /* Vuelve al centro */
+}
+
+.img > img {
+    height: 85px; /* Forzamos a que el logo no crezca más de 85px */
+    width: auto;
+    object-fit: contain;
+}
+
+.proyect-text {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    height: 50%;
-    margin-left: 15px;
-    margin-top: 8px;
+    flex: 1; /* Empuja el contenedor para llenar el espacio vacío */
+    padding: 18px; /* Padding limpio por todos los lados */
+    font-size: 14px;
+}
+
+.container-formacion{
+    display: flex;
+    flex-direction: column;
+}
+
+.formaciones{
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 15px;
+}
+
+.formaciones > p:first-child {
+    min-width: 90px;
+    color: rgb(190, 190, 190);
+}
+
+.formacion-status{
+    background-color: #D4AF37;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    align-self: flex-start;
+    transform: translateY(0.55em);
+}
+
+.text > p:last-child{
+    color: grey;
+}
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding-bottom: 40px;
+}
+
+.cotainer-contact{
+    display: flex;
+    gap: 15px;
+}
+
+.contact{
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(238, 238, 238, 0.6);
+}
+
+.contact, .contact > a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #444;
+    letter-spacing: 0.04em;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.contact > .ti, 
+.contact > a > .ti{
+    font-size: 18px;
 }
