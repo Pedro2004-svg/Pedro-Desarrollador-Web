@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,273 +20,302 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="#inicio">
-                <div class="logo">
-                    <div class="logo-box">&lt;P/&gt;</div>
-                    <div class="logo-text">
-                        <div class="logo-name">Pedro</div>
-                        <div class="logo-role">Dev & Sec</div>
+        <header id="header">
+            <div class="nav-container">
+                <a href="#inicio">
+                    <div class="logo">
+                        <div class="logo-box">&lt;P/&gt;</div>
+                        <div class="logo-text">
+                            <div class="logo-name">Pedro</div>
+                            <div class="logo-role">Dev & Sec</div>
+                        </div>
+                    </div>
+                </a>
+                <nav class="nav-bar">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#sobre_mi">Sobre mí</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#formacion">Formacion</a>
+                    <div class="theme-toggle dark" id="theme-toggle">
+                        <div class="toggle-thumb" id="toggle-thumb">
+                            <i class="ti ti-moon" id="toggle-icon"></i>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="carga-pagina" id="carga-pagina">
+        <main id="main">
+            <section id="inicio">
+                <div class="section-divider">
+                    <span>Inicio</span>
+                    <div class="line"></div>
+                </div>
+                <div class="container-main">
+                    <div class="container">
+                        <div class="disponible-container">
+                            <span class="disponible">Disponible para trabajar</span>
+                        </div>
+                        <div class="presentacion">
+                            <h1 class="titulo-principal">Hola, <span class="destacado">soy Pedro</span></h1>
+                            <h2>Desarrollador Web</h2>
+                            <p>Graduado en DAW con formacion en ASIR y especializacion en Ciberseguridad.</p>
+                            <p>Construyo aplicaciones web limpias, funcionales y seguras.</p>
+                        </div>
+                        <div class="conocimientos-container">
+                            <span class="disponible">Ciberseguridad</span>
+                            <span class="disponible">Backend</span>
+                            <span class="disponible">Frontend</span>
+                        </div>
+                        <div class="btn-inicio">
+                            <a href="#proyectos" class="btn-proyecto">Ver Proyectos</a>
+                            <a href="ruta/a/tu/CV_Pedro.pdf" class="btn-cv" download>Descargar CV</a>
+                        </div>
+                    </div>
+                    <div class="stats-inicio">
+                        <div class="nombre">
+                            <span class="logo-stats">P</span>
+                            <div class="texto-stats">
+                                <p><b>Pedro</b></p>
+                                <p>Dev & Sec &middot; España</p>
+                            </div>
+                            <div class="status">
+                                <span class="status-stats"></span>
+                                <p>Disponible</p>
+                            </div>
+                        </div>
+                        <div class="stats-main">
+                            <div class="formacion">
+                                <span><b>3+</b></span>
+                                <p>Años en formación</p>
+                            </div>
+                            <div class="formacion">
+                                <span><b>3</b></span>
+                                <p>Titulaciones</p>
+                            </div>
+                            <div class="formacion">
+                                <span><b>10+</b></span>
+                                <p>Tecnologias</p>
+                            </div>
+                        </div>
+                        <div class="contacto">
+                            <span class="github"><i class="ti ti-brand-github"></i><a
+                                    href="https://github.com/Pedro2004-svg" target="_blank"
+                                    rel="noopener noreferrer">github.com/Pedro</a></span>
+                            <span class="linkdin"><i class="ti ti-brand-linkedin"></i><a
+                                    href="https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278" target="_blank"
+                                    rel="noopener noreferrer">linkedin.com/Pedro</a></span>
+                        </div>
                     </div>
                 </div>
-            </a>
-            <nav class="nav-bar">
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre_mi">Sobre mí</a>
-                <a href="#skills">Skills</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#formacion">Formacion</a>
-                <div class="theme-toggle" id="theme-toggle">
-                    <div class="toggle-thumb" id="toggle-thumb">
-                        <i class="ti ti-sun" id="toggle-icon"></i>
+            </section>
+            <section id="sobre_mi">
+                <div class="section-divider">
+                    <span>Sobre mi</span>
+                    <div class="line"></div>
+                </div>
+                <div class="container-sobremi">
+                    <div class="text-aboutme">
+                        <p>Soy desarrollador web con una base técnica amplia.
+                            Mi paso por ASIR me dio una vision sólida de redes, sistemas y servidores,
+                            y la especialización en Ciberseguridad me hizo pensar siempre en escribir código seguro.</p>
+                        <br>
+                        <p>Me apasiona construir proyectos de principio a fin:
+                            desde el diseño de la interfaz hasta el despligue en producción.
+                        </p>
+                    </div>
+                    <div class="skills-about">
+                        <div class="labels">
+                            <i class="ti ti-shield-check"></i>
+                            <div class="text-label">
+                                <b>
+                                    <p>Perfil de ciberseguridad</p>
+                                </b>
+                                <p>Especialización oficial + DAW</p>
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <i class="ti ti-server"></i>
+                            <div class="text-label">
+                                <b>
+                                    <p>Sólida base en sistemas</p>
+                                </b>
+                                <p>Formación ASIR completa</p>
+                            </div>
+                        </div>
+                        <div class="labels">
+                            <i class="ti ti-code"></i>
+                            <div class="text-label">
+                                <b>
+                                    <p>Desarrollador web full stack</p>
+                                </b>
+                                <p>Frontend + Backend</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </header>
-    <section id="inicio">
-        <div class="section-divider">
-            <span>Inicio</span>
-            <div class="line"></div>
-        </div>
-        <div class="container-main">
-            <div class="container">
-                <div class="disponible-container">
-                    <span class="disponible">Disponible para trabajar</span>
+            </section>
+            <section id="skills">
+                <div class="section-divider">
+                    <span>Skills</span>
+                    <div class="line"></div>
                 </div>
-                <div class="presentacion">
-                    <h2 style="display:inline;">Hola, </h2> <h2 style="display:inline; color:#D4AF37;">soy Pedro</h2> <h2>Desarrollador Web</h2>
-                    <p>Graduado en DAW con formacion en ASIR y especializacion en Ciberseguridad.</p>
-                    <p>Construyo aplicaciones web limpias, funcionales y seguras.</p>
-                </div>
-                <div class="conocimientos-container">
-                    <span class="disponible">Ciberseguridad</span>
-                    <span class="disponible">Backend</span>
-                    <span class="disponible">Frontend</span>
-                </div>
-                <div class="btn-inicio">
-                    <a href="#proyectos" class="btn-proyecto">Ver Proyectos</a>
-                    <button class="btn-cv">Descargar CV</button>
-                </div>
-            </div>
-            <div class="stats-inicio">
-                <div class="nombre">
-                    <span class="logo-stats">P</span>
-                    <div class="texto-stats">
-                        <p><b>Pedro</b></p>
-                        <p>Dev & Sec &middot; España</p>
+                <div class="container-skills">
+                    <div class="skill">
+                        <b>
+                            <p>Frontend</p>
+                        </b>
+                        <div class="stats">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Capacitor</span>
+                        </div>
                     </div>
-                    <div class="status">
-                        <span class="status-stats"></span> 
-                        <p>Disponible</p>
+                    <div class="skill">
+                        <b>
+                            <p>Backend</p>
+                        </b>
+                        <div class="stats">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Node.js</span>
+                            <span>REST APIs</span>
+                            <span>Java</span>
+                            <span>Python</span>
+                        </div>
                     </div>
-                </div>
-                <div class="stats-main">
-                    <div class="formacion">
-                        <span><b>3+</b></span>
-                        <p>Años en formación</p>
+                    <div class="skill">
+                        <b>
+                            <p>DevOps</p>
+                        </b>
+                        <div class="stats">
+                            <span>Linux</span>
+                            <span>Apache</span>
+                            <span>Git</span>
+                            <span>Docker</span>
+                        </div>
                     </div>
-                    <div class="formacion">
-                        <span><b>3</b></span>
-                        <p>Titulaciones</p>
-                    </div>
-                    <div class="formacion">
-                        <span><b>10+</b></span>
-                        <p>Tecnologias</p>
-                    </div>
-                </div>
-                <div class="contacto">
-                    <span class="github"><i class="ti ti-brand-github"></i><a href="https://github.com/Pedro2004-svg" target="_blank">github.com/Pedro</a></span>
-                    <span class="linkdin"><i class="ti ti-brand-linkedin"></i><a href="https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278" target="_blank">linkedin.com/in/pedro</a></span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="sobre_mi">
-        <div class="section-divider">
-            <span>Sobre mi</span>
-            <div class="line"></div>
-        </div>
-        <div class="container-sobremi">
-            <div class="text-aboutme">
-                <p>Soy desarrollador web con una base técnica amplia.
-                Mi paso por ASIR me dio una vision sólida de redes, sistemas y servidores, 
-                y la especialización en Ciberseguridad me hizo pensar siempre en escribir código seguro.</p>
-                <br>
-                <p>Me apasiona construir proyectos de principio a fin:
-                    desde el diseño de la interfaz hasta el despligue en producción.
-                </p>
-            </div>
-            <div class="skills-about">
-                <div class="labels">
-                    <i class="ti ti-shield-check"></i>
-                    <div class="text-label">
-                        <b><p>Perfil de ciberseguridad</p></b>
-                        <p>Especialización oficial + DAW</p>
+                    <div class="skill">
+                        <b>
+                            <p>Seguridad</p>
+                        </b>
+                        <div class="stats">
+                            <span>Redes</span>
+                            <span>Firewall</span>
+                            <span>Zona DMZ</span>
+                        </div>
                     </div>
                 </div>
-                <div class="labels">
-                    <i class="ti ti-server"></i>
-                    <div class="text-label">
-                        <b><p>Sólida base en sistemas</p></b>
-                        <p>Formación ASIR completa</p>
+            </section>
+            <section id="proyectos">
+                <div class="section-divider">
+                    <span>Proyectos</span>
+                    <div class="line"></div>
+                </div>
+                <div class="line-proyects">
+                    <div class="proyect" id="GNS3">
+                        <div class="img">
+                            <img src="img/GNS3.png" alt="Logo GNS3">
+                        </div>
+                        <div class="proyect-text">
+                            <b>
+                                <p>Estructura red en GNS3</p>
+                            </b>
+                            <p>Estructura de una red creada en GNS3 con MV en linux. </p>
+                            <div class="stats">
+                                <span>GNS3</span>
+                                <span>DHCP</span>
+                                <span>DNS</span>
+                                <span>Linux</span>
+                                <span>Window</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyect" id="KeyStore">
+                        <div class="img">
+                            <img src="img/tienda.png" alt="Logo de tienda">
+                        </div>
+                        <div class="proyect-text">
+                            <b>
+                                <p>KeyStore</p>
+                            </b>
+                            <p>Pagina web de compra de videojuegos, tipo Steam, con claves de cada juego. </p>
+                            <div class="stats">
+                                <span>Node.js</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>REST APIs</span>
+                                <span>SQL</span>
+                                <span>Capacitor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="proyect" id="Seguridad">
+                        <div class="img">
+                            <img src="img/seguridad.png" alt="Logo seguridad contraseña">
+                        </div>
+                        <div class="proyect-text">
+                            <b>
+                                <p>Hash Generator</p>
+                            </b>
+                            <p>Herramienta Web que genera hashes MD5 y SHA-256</p>
+                            <div class="stats">
+                                <span>Rust</span>
+                                <span>WebAssembly</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="labels">
-                    <i class="ti ti-code"></i>
-                    <div class="text-label">
-                        <b><p>Desarrollador web full stack</p></b>
-                        <p>Frontend + Backend</p>
+            </section>
+            <section id="formacion">
+                <div class="section-divider">
+                    <span>Formación</span>
+                    <div class="line"></div>
+                </div>
+                <div class="container-formacion">
+                    <div class="formaciones">
+                        <p>2024-2026</p>
+                        <span class="formacion-status"></span>
+                        <div class="text">
+                            <p><b>Grado Superior DAW</b></p>
+                            <p>Desarrollo de Aplicaciones Web &middot; IES Gaspar Melchor de Jovellanos</p>
+                        </div>
+                    </div>
+                    <div class="section-divider">
+                        <div class="line"></div>
+                    </div>
+                    <div class="formaciones">
+                        <p>2024-2025</p>
+                        <span class="formacion-status"></span>
+                        <div class="text">
+                            <p><b>Especialización en Ciberseguridad</b></p>
+                            <p>Curso Especialización oficial &middot; MEDAC</p>
+
+                        </div>
+                    </div>
+                    <div class="section-divider">
+                        <div class="line"></div>
+                    </div>
+                    <div class="formaciones">
+                        <p>2022-2024</p>
+                        <span class="formacion-status"></span>
+                        <div class="text">
+                            <p><b>Grado Superior ASIR</b></p>
+                            <p>Administración de Sistemas Informáticos en Red &middot; IES Enrique Tierno Galvan</p>
+                        </div>
+                    </div>
+                    <div class="section-divider">
+                        <div class="line"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section id="skills">
-        <div class="section-divider">
-            <span>Skills</span>
-            <div class="line"></div>
-        </div>
-        <div class="container-skills">
-            <div class="skill">
-                <b><p>Frontend</p></b>
-                <div class="stats">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Capacitor</span>
-                </div>
-            </div>
-            <div class="skill">
-                <b><p>Backend</p></b>
-                <div class="stats">
-                    <span>PHP</span>
-                    <span>MySQL</span>
-                    <span>Node.js</span>
-                    <span>REST APIs</span>
-                    <span>Java</span>
-                    <span>Python</span>
-                </div>
-            </div>
-            <div class="skill">
-                <b><p>DevOps</p></b>
-                <div class="stats">
-                    <span>Linux</span>
-                    <span>Apache</span>
-                    <span>Git</span>
-                    <span>Docker</span>
-                </div>
-            </div>
-            <div class="skill">
-                <b><p>Seguridad</p></b>
-                <div class="stats">
-                    <span>Redes</span>
-                    <span>Firewall</span>
-                    <span>Zona DMZ</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="proyectos">
-        <div class="section-divider">
-            <span>Proyectos</span>
-            <div class="line"></div>
-        </div>
-        <div class="line-proyects">
-            <div class="proyect">
-                <div class="img">
-                    <img src="img/GNS3.png" alt="Logo GNS3">
-                </div>
-                <div class="proyect-text">
-                    <b><p>Estructura red en GNS3</p></b>
-                    <p>Estructura de una red creada en GNS3 con MV en linux. </p>
-                    <div class="stats">
-                        <span>GNS3</span>
-                        <span>DHCP</span>
-                        <span>DNS</span>
-                        <span>Linux</span>
-                        <span>Window</span>
-                    </div>
-                </div>
-            </div>
-            <div class="proyect">
-                <div class="img">
-                    <img src="img/tienda.png" alt="Logo de tienda">
-                </div>
-                <div class="proyect-text">
-                    <b><p>KeyStore</p></b>
-                    <p>Pagina web de compra de videojuegos, tipo Steam, con claves de cada juego. </p>
-                    <div class="stats">
-                        <span>Node.js</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>REST APIs</span>
-                        <span>SQL</span>
-                        <span>Capacitor</span>
-                    </div>
-                </div>
-            </div>
-            <div class="proyect">
-                <div class="img">
-                    <img src="img/seguridad.png" alt="Logo seguridad contraseña">
-                </div>
-                <div class="proyect-text">
-                    <b><p>Password Checker</p></b>
-                    <p>Herramienta Web que verifica si la contraseña introducida es segura</p>
-                    <div class="stats">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>Rust</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="formacion">
-        <div class="section-divider">
-            <span>Formación</span>
-            <div class="line"></div>
-        </div>
-        <div class="container-formacion">
-            <div class="formaciones">
-                <p>2024-2026</p>
-                <span class="formacion-status"></span>
-                <div class="text">
-                    <p><b>Grado Superior DAW</b></p>
-                    <p>Desarrollo de Aplicaciones Web &middot; IES Gaspar Melchor de Jovellanos</p>
-                </div>
-            </div>
-            <div class="section-divider">
-                <div class="line"></div>
-            </div>
-            <div class="formaciones">
-                <p>2024-2025</p>
-                <span class="formacion-status"></span>
-                <div class="text">
-                    <p><b>Especialización en Ciberseguridad</b></p>
-                    <p>Curso Especialización oficial &middot; MEDAC</p>
-                    
-                </div>
-            </div>
-            <div class="section-divider">
-                <div class="line"></div>
-            </div>
-            <div class="formaciones">
-                <p>2022-2024</p>
-                <span class="formacion-status"></span>
-                <div class="text">
-                    <p><b>Grado Superior ASIR</b></p>
-                    <p>Administración de Sistemas Informáticos en Red &middot; IES Enrique Tierno Galvan</p>
-                </div>
-            </div>
-            <div class="section-divider">
-                <div class="line"></div>
-            </div>
-        </div>
-    </section>
+            </section>
+        </main>
     <footer>
         <div class="section-divider">
             <span>Contacto</span>
@@ -299,22 +329,207 @@
                 </a>
             </div>
             <div class="contact">
-                <a href="https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278" target="_blank" class="contact-chip">
+                <a href="https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278" target="_blank" class="contact-chip"
+                    rel="noopener noreferrer">
                     <i class="ti ti-brand-linkedin"></i>
                     <p>LinkedIn</p>
                 </a>
             </div>
             <div class="contact">
-                <a href="https://github.com/Pedro2004-svg" target="_blank" class="contact-chip">
+                <a href="https://github.com/Pedro2004-svg" target="_blank" class="contact-chip"
+                    rel="noopener noreferrer">
                     <i class="ti ti-brand-github"></i>
                     <p>GitHub</p>
                 </a>
             </div>
             <div class="contact">
-                    <i class="ti ti-map-pin"></i>
-                    <p>España</p>
+                <i class="ti ti-map-pin"></i>
+                <p>España</p>
+            </div>
+    </footer>
+    </div>
+    <div class="overlay" id="overlay-gns3">
+        <div class="modal" id="modal-gns3">
+            <div class="img">
+                <img src="img/GNS3.png" alt="Logo GNS3">
+            </div>
+            <button class="modal-close" id="close-gns3"><i class="ti ti-x"></i></button>
+            <div class="text-modal">
+                <div class="titulo">
+                    <p><b>Estructura red en GNS3</b></p>
+                    <div class="stats">
+                        <span>GNS3</span>
+                        <span>DHCP</span>
+                        <span>DNS</span>
+                        <span>Linux</span>
+                        <span>Window</span>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="descripcion-modal">
+                    <p>
+                        Diseño e implementacion de una red empresarial simulada en GNS3 con maquinas virtuales de
+                        Windows y Linux.
+                        La red incluye segmentación por VLANs, servidro DHCP para la asignación dinamica de IPs,
+                        servidor DNS para la resolución de nombres internos
+                        y Zona Desmilitarizada.
+                    </p>
+                </div>
+                <div class="modal-stats">
+                    <div class="stats-modal">
+                        <i class="ti ti-router"></i>
+                        <p><b>Topologia</b></p>
+                        <p>Router Central con switches y 3 segmentos de red diferenciados.</p>
+                    </div>
+
+                    <div class="stats-modal">
+                        <i class="ti ti-server"></i>
+                        <p><b>Servicios</b></p>
+                        <p>DHCP y DNS configurados en servidor Linux Debian</p>
+                    </div>
+
+                    <div class="stats-modal">
+                        <i class="ti ti-shield"></i>
+                        <p><b>Seguridad</b></p>
+                        <p>Reglas de Firewall entre segmentos, control de acceso y zona Demilitarizada</p>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="aprendi-modal">
+                    <p><b>Lo que aprendi</b></p>
+                    <ul>
+                        <li><i class="ti ti-check"></i>Configuración de protocolos de enrutamiento</li>
+                        <li><i class="ti ti-check"></i>Gestióm de servicios de red de Linux</li>
+                        <li><i class="ti ti-check"></i>Diagnóstico y resolución de problemas de red</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="overlay" id="overlay-keystore">
+        <div class="modal" id="modal-keystore">
+            <div class="img">
+                <img src="img/tienda.png" alt="Logo de tienda">
+            </div>
+            <button class="modal-close" id="close-keystore"><i class="ti ti-x"></i></button>
+            <div class="text-modal">
+                <div class="titulo">
+                    <p><b>KeyStore</b></p>
+                    <div class="stats">
+                        <span>Node.js</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>REST APIs</span>
+                        <span>SQL</span>
+                        <span>Capacitor</span>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="descripcion-modal">
+                    <p>Plataforma de compra de videojuegos tipo Steam donde los usuarios puedes registrarse,
+                        explorar el catálogo, añadir
+                        juegos al carrito y obtener claves de activación tras la compra. Backend desarrollado con
+                        Node.js y base de datos SQL con Supabase.
+                    </p>
+                </div>
+                <div class="modal-stats">
+                    <div class="stats-modal">
+                        <i class="ti ti-user"></i>
+                        <p><b>Autenticación</b></p>
+                        <p>Registro y login con sesiones y contraseñas hasheadas</p>
+                    </div>
+
+                    <div class="stats-modal">
+                        <i class="ti ti-shopping-cart"></i>
+                        <p><b>Carrito</b></p>
+                        <p>Gestion de carrito y proceso de compra completo</p>
+                    </div>
+
+                    <div class="stats-modal">
+                        <i class="ti ti-key"></i>
+                        <p><b>Claves</b></p>
+                        <p>Generación y entrega de claves de activación de juego</p>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="aprendi-modal">
+                    <p><b>Lo que aprendi</b></p>
+                    <ul>
+                        <li><i class="ti ti-check"></i>Desarrollo de REST APIs con Node.js</li>
+                        <li><i class="ti ti-check"></i>Diseño de base de datos relacional</li>
+                        <li><i class="ti ti-check"></i>Gestion de sesiones y seguridad en autenticación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay-seguridad">
+        <div class="modal" id="modal-seguridad">
+            <div class="img">
+                <img src="img/seguridad.png" alt="Logo seguridad contraseña">
+            </div>
+            <button class="modal-close" id="close-seguridad"><i class="ti ti-x"></i></button>
+            <div class="text-modal">
+                <div class="titulo">
+                    <p><b>Hash Generator</b></p>
+                    <div class="stats">
+                        <span>Rust</span>
+                        <span>WebAssembly</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="descripcion-modal">
+                    <p>
+                        Herramienta que genera hashes MD5 y SHA-256 en tiempo real. La lógica de hashing está
+                        implementada en Rust y compilada a WebAssembly
+                        para ejecutarse directamente en navegador nativo.
+                    </p>
+                </div>
+                <div class="contenido-construccion">
+                    <img src="img/construccion.png" alt="Señal de zona en construccion">
+                    <div class="construccion">
+                        <div class="modal-hash">
+                            <input type="text" placeholder="Introduce un texto...">
+                            <div class="output-hash">
+                                <p>MD5</p>
+                                <span>-</span>
+                                <div class="section-divider-hash">
+                                    <div class="line-modal"></div>
+                                </div>
+                                <p>SHA-256</p>
+                                <span>-</span>
+                            </div>
+                        </div>
+                        <div class="section-divider">
+                            <div class="line-modal"></div>
+                        </div>
+                        <div class="aprendi-modal">
+                            <p><b>Lo que aprendi</b></p>
+                            <ul>
+                                <li><i class="ti ti-check"></i>Compilacion de Rust a WebAssembly</li>
+                                <li><i class="ti ti-check"></i>Integración de módulos WASM con JavaScript</li>
+                                <li><i class="ti ti-check"></i>Algoritmos de hashing y su uso en ciberseguridad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>

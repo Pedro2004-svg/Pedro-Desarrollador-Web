@@ -1,28 +1,115 @@
-/* 1. RESETEO GENERAL */
+/* ==========================================================================
+    1. VARIABLES Y RESETEO GENERAL
+   ========================================================================== */
+:root {
+    --color-dark: #111111;
+    /* Negro para títulos principales */
+    --color-text: #2C2C2C;
+    /* Gris oscuro elegante para textos */
+    --color-light: #ffffff;
+    /* Blanco puro */
+    --color-bg: #FAFAFA;
+    /* Blanco alabastro de fondo */
+    --color-gold: #D4AF37;
+    /* Tu dorado brillante favorito */
+    --color-gold-hover: #C9A84C;
+    /* Dorado más oscuro para los efectos hover */
+    --color-gold-light: #FBF5DC;
+    /* Fondo dorado suave para iconos */
+    --color-bg-card: #fafafa;
+    /* Gris ultra claro para las tarjetas */
+    --color-muted: #666666;
+    /* Para descripciones secundarias */
+    --color-border: #eaeaea;
+    /* Líneas divisorias finas y limpias */
+    --color-btn-proyecto: #3a3a3a;
+
+    /* Sombra premium con un sutil destello de tu dorado brillante */
+    --shadow-premium: 0 4px 14px rgba(212, 175, 55, 0.15);
+}
+
+body.dark {
+    --color-dark: #f0f0f0;
+    --color-text: #e0e0e0;
+    --color-light: #1C1C1C;
+    --color-bg: #111111;
+    --color-bg-card: #1a1a1a;
+    --color-muted: #aaaaaa;
+    --color-border: #2e2e2e;
+    --shadow-premium: 0 4px 14px rgba(212, 175, 55, 0.12);
+    --color-gold-light: rgba(212, 175, 55, 0.151);
+    --color-btn-proyecto: #c0c0c0;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     line-height: 1.6;
-    color: #2C2C2C; /* Gris oscuro elegante */
-    background-color: #FAFAFA; /* Tu blanco alabastro premium */
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. ESTRUCTURA DEL HEADER */
-header {
-    width: 100%;
-    padding: 15px 0; /* Un poco más de aire arriba y abajo */
-    background-color: #FFFFFF; /* Blanco puro para que contraste sutilmente con el fondo de la web */
-    border-bottom: 0.5px solid #EAEAEA; /* Una línea imperceptible que delimita el menú */
+.carga-pagina{
+    animation: slideDown 0.8s ease forwards;
 }
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Forzar herencia de tipografía en elementos rebeldes */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    color: inherit;
+}
+
+/* ==========================================================================
+    2. ESTRUCTURA DEL HEADER Y MENÚ
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--color-light);
+    border-bottom: 0.5px solid var(--color-border);
+    z-index:1000;
+}
+
 
 .nav-container {
     max-width: 1200px;
@@ -31,6 +118,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: slideDown 0.8s ease forwards;
 }
 
 .nav-bar {
@@ -38,24 +126,21 @@ header {
     gap: 1.25rem;
 }
 
-/* 3. ENLACES DEL MENÚ */
 header a {
-    font-family: "Manrope", sans-serif;
-    font-weight: 700; /* Corregido a Bold para interfaz */
+    font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #555555; /* Un gris intermedio muy limpio */
     text-decoration: none;
-    cursor: pointer;
     transition: color 0.3s ease;
+    color: var(--color-text);
 }
 
 header a:hover {
-    color: #D4AF37; /* Cambiará por tu dorado más adelante */
+    color: var(--color-gold);
 }
 
-/* 4. LOGO (Tu marca personal) */
+/* LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -65,7 +150,7 @@ header a:hover {
 .logo-box {
     width: 32px;
     height: 32px;
-    background: #1C1C1C; /* Este morado cambiará en el modo oscuro */
+    background: var(--color-gold);
     border-radius: 7px;
     display: flex;
     align-items: center;
@@ -73,7 +158,7 @@ header a:hover {
     font-family: monospace;
     font-size: 12px;
     font-weight: 500;
-    color: #fff;
+    color: var(--color-light);
     letter-spacing: -1px;
 }
 
@@ -81,24 +166,24 @@ header a:hover {
     display: block;
     font-size: 14px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--color-dark);
 }
 
 .logo-role {
     display: block;
     font-size: 10px;
-    color: #888;
+    color: #c2c2c2;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-/* 5. BOTÓN CAMBIO DE MODO */
+/* BOTÓN CAMBIO DE MODO */
 .theme-toggle {
     width: 44px;
     height: 24px;
     border-radius: 12px;
     border: 0.5px solid #ccc;
-    background: #f0f0f0;
+    background: var(--color-border);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -110,44 +195,57 @@ header a:hover {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #fff;
+    background: var(--color-light);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 11px;
-    transition: transform 0.25s;
+    transition: transform 0.25s ease;
 }
 
-/* 6. ETIQUETA "DISPONIBLE" (Simplificada) */
+.theme-toggle.dark .toggle-thumb {
+    transform: translateX(20px);
+}
+
+.theme-toggle.dark {
+    border-color: #1C1C1C;
+}
+
+/* ==========================================================================
+   3. COMPONENTES GLOBALES (Etiquetas, Divisores, Botones)
+   ========================================================================== */
+.destacado {
+    color: #D4AF37;
+}
+
 .disponible-container {
-    margin: 10px 10px 10px 5px; /* Arriba, Derecha, Abajo, Izquierda en una sola línea */
+    margin: 10px 10px 10px 5px;
 }
 
 .disponible {
     padding: 4px 14px;
     border-radius: 20px;
-    background: rgba(238, 238, 238, 0.6);
+    background: var(--color-border);
     backdrop-filter: blur(10px);
-    border: 1px solid #E5E5E5;
-    font-size: 13px; /* Un pelo más pequeña se ve más delicada */
+    border: 1px solid var(--color-border);
+    font-size: 13px;
     font-weight: 700;
-    color: #444;
+    color: var(--color-text);
     letter-spacing: 0.04em;
     margin-right: 5px;
 }
 
-/* 7. DIVISORES DE SECCIÓN */
 .section-divider {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 40px; /* Más espacio para que el diseño respire */
+    margin-bottom: 40px;
     margin-top: 40px;
 }
 
 .section-divider span {
     font-size: 11px;
-    color: #888;
+    color: var(--color-muted);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     white-space: nowrap;
@@ -156,192 +254,226 @@ header a:hover {
 .section-divider .line {
     flex: 1;
     height: 0.5px;
-    background: #E0E0E0;
+    background: var(--color-border);
 }
 
-/* 8. CONTENEDOR DE SECCIONES */
+.section-divider .line-modal {
+    margin: 0 25px;
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.btn-inicio {
+    margin-top: 20px;
+}
+
+.btn-proyecto {
+    font-size: 14px;
+    background-color: var(--color-dark);
+    border-radius: 10px;
+    padding: 10px 16px;
+    color: var(--color-bg);
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-cv {
+    font-size: 14px;
+    background-color: var(--color-gold);
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    color: var(--color-light);
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-proyecto:hover {
+    background-color: var(--color-btn-proyecto);
+    transition: background-color 0.3s ease;
+}
+
+.btn-cv:hover {
+    background-color: var(--color-gold-hover);
+    transition: background-color 0.3s ease;
+}
+
+/* Badges de tecnologías generales (Fuera del modal) */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.stats>span {
+    background-color: var(--color-border);
+    color: var(--color-text);
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin-right: 2px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   4. SECCIÓN PRINCIPAL / HERO
+   ========================================================================== */
 section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.container-main{
-    display:flex;
+.container-main {
+    display: flex;
     justify-content: space-between;
 }
 
-.logo-stats{
-    background: #d1b768;
-    color: #ffffff;
+.logo-stats {
+    background: var(--color-gold);
+    color: var(--color-light);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 15px;
-    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.nombre{
+.nombre {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgb(211, 211, 211);
+    border: 1px solid var(--color-border);
     border-radius: 15px;
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    box-shadow: var(--shadow-premium);
     padding: 15px;
 }
 
 .nombre p {
     font-size: 13px;
-    color: #000000;
+    color: var(--color-text);
 }
 
-.status-stats{
+.status-stats {
     background-color: rgb(42, 179, 0);
     width: 8px;
     height: 8px;
     border-radius: 50%;
     margin-right: 8px;
     margin-left: 100px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.status{
+.status {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.stats-main{
+.stats-main {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
     gap: 8px;
 }
 
-.formacion{
+.formacion {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgb(211, 211, 211);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-premium);
     border-radius: 15px;
     padding: 15px;
-    flex:1;
+    flex: 1;
 }
 
-.formacion span{
+.formacion span {
     font-size: 20px;
-    font-weight: 500;
-    color: #D4AF37;
+    font-weight: 700;
+    color: var(--color-gold);
 }
 
-.formacion p{
+.formacion p {
     font-size: 12px;
-    color: #3a3a3a;
+    color: var(--color-text);
     white-space: nowrap;
 }
 
-.contacto{
+.contacto {
     margin-top: 15px;
-    border: 1px solid rgb(211, 211, 211);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-premium);
     border-radius: 15px;
     padding: 15px;
     font-size: 12px;
-    color: #3a3a3a;
+    color: var(--color-text);
 }
 
-.contacto span{
+.contacto>span {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.github > .ti-brand-github, .linkdin > .ti-brand-linkedin {
-    font-size: 20px;
-    color: #D4AF37;
+.contacto>span>a {
+    color: var(--color-text);
 }
 
-.github{
+.github>.ti-brand-github,
+.linkdin>.ti-brand-linkedin {
+    font-size: 20px;
+    color: var(--color-gold);
+}
+
+.github {
     margin-bottom: 5px;
 }
 
-.conocimientos-container{
+.conocimientos-container {
     margin-top: 20px;
     display: flex;
 }
 
-.btn-inicio{
-    margin-top: 20px;
-}
-
-.btn-proyecto{
-    font-size: 14px;
-    background-color: rgb(27, 27, 27);
-    border-radius: 10px;
-    padding: 10px 16px;
-    color: rgb(240, 240, 240);
-    margin-right: 10px;
-    text-decoration: none;
-    cursor: pointer; 
-}
-
-.btn-cv {
-    font-size: 14px;          /* añade tamaño de letra */
-    background-color: #D4AF37;
-    padding: 10px 16px;       /* mismo padding que btn-proyecto */
-    border-radius: 10px;
-    border: none;
-    color: #ffffff;            /* añade color de letra */
-    cursor: pointer;           /* el cursor cambia al pasar por encima */
-}
-
-.btn-proyecto:hover {
-    background-color: #3a3a3a;
-    transition: background-color 0.3s ease;
-}
-
-.btn-cv:hover {
-    background-color: #C9A84C;  /* dorado más oscuro al pasar el ratón */
-    transition: background-color 0.3s ease;
-}
-
-.container-sobremi{
+/* ==========================================================================
+   5. SECCIÓN SOBRE MÍ Y SKILLS
+   ========================================================================== */
+.container-sobremi {
     display: flex;
     justify-content: space-between;
 }
 
-.text-aboutme{
+.text-aboutme {
     max-width: 50%;
 }
 
-.labels{
+.labels {
     display: flex;
     align-items: center;
 }
 
-.text-label{
+.text-label {
     font-size: 15px;
 }
-.ti-shield-check, .ti-server, .ti-code{
+
+.labels>.ti-shield-check,
+.labels>.ti-server,
+.labels>.ti-code {
     font-size: 20px;
     margin-right: 15px;
-    color: #D4AF37;
-    background-color: #FBF5DC;
+    color: var(--color-gold);
+    background-color: var(--color-gold-light);
     border-radius: 10px;
     padding: 10px;
 }
 
-.skills-about{
-    border: 1px solid rgb(211, 211, 211);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+.skills-about {
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-premium);
     border-radius: 15px;
     width: 45%;
     padding: 15px;
@@ -350,78 +482,53 @@ section {
     gap: 10px;
 }
 
-.container-skills{
+.container-skills {
     display: flex;
     gap: 20px;
 }
 
-.skill{
+.skill {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(211, 211, 211);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-premium);
     border-radius: 15px;
     padding: 15px;
     gap: 10px;
     width: 100%;
 }
 
-.stats {
-    display: flex;
-    flex-wrap: wrap; /* Si no caben en una línea, bajan a la siguiente */
-    gap: 5px;
-}
-
-.stats > span{
-    background-color: rgb(235, 235, 235);
-    border-radius: 5px;
-    padding: 4px;
-    font-size: 14px;
-    margin-right: 2px;
-}
-
-.line-proyects{
+/* ==========================================================================
+   6. SECCIÓN PROYECTOS Y TARJETAS
+   ========================================================================== */
+.line-proyects {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    padding-top: 15px; 
+    padding-top: 15px;
     padding-bottom: 25px;
 }
 
-.proyect:nth-child(1) > .img{
+.proyect:nth-child(1)>.img {
     background-color: #0B0D12;
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 180, 255, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px; /* Tamaño de los cuadrados de la red */
+    background-size: 20px 20px;
 }
 
-
-.proyect:nth-child(2) > .img{
+.proyect:nth-child(2)>.img {
     background-color: #F5F5F5;
-    background-image: repeating-linear-gradient(
-        45deg,
-        #F5F5F5,
-        #F5F5F5 10px,
-        #EAEAEA 10px,
-        #EAEAEA 20px
-    );
+    background-image: repeating-linear-gradient(45deg, #F5F5F5, #F5F5F5 10px, #EAEAEA 10px, #EAEAEA 20px);
 }
 
-.proyect:nth-child(3) > .img{
-    background: linear-gradient(
-        135deg, 
-        #C59334 0%, 
-        #E2B653 20%, 
-        #F9D976 40%, 
-        #E2B653 60%, 
-        #C59334 80%, 
-        #A67B27 100%
-    );
+.proyect:nth-child(3)>.img {
+    background: linear-gradient(135deg,
+            #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
 }
 
 .img {
-    flex: 0 0 140px; /* Altura exacta de 140px. Así el fondo siempre se ve en la misma proporción */
+    flex: 0 0 140px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -430,32 +537,50 @@ section {
 
 .proyect {
     width: 100%;
-    border: 1px solid rgb(211, 211, 211);
+    border: 1px solid var(--color-border);
     border-radius: 15px;
     overflow: hidden;
-    min-height: 320px; /* Un poco más de espacio para que todo respire */
+    min-height: 320px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    background-color: #ffffff; /* Evita que el fondo de la web se cuele en el texto */
+    background-color: var(--color-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.proyect:hover{
+.proyect:hover {
     animation: balanceo 0.6s ease-in-out forwards;
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
 }
 
 @keyframes balanceo {
-    0%   { transform: scale(1) rotate(0deg) translateX(0); }
-    15%  { transform: scale(1.05) rotate(2.5deg) translateX(2px); } 
-    35%  { transform: scale(1.05) rotate(-2.5deg) translateX(-2px); }
-    55%  { transform: scale(1.05) rotate(1.5deg) translateX(1.5px); } 
-    75%  { transform: scale(1.05) rotate(-1deg) translateX(-1px); }  /* Tercer balanceo aún más suave */
-    100% { transform: scale(1.05) rotate(0deg) translateX(0); }      /* Vuelve al centro */
+    0% {
+        transform: scale(1) rotate(0deg) translateX(0);
+    }
+
+    15% {
+        transform: scale(1.05) rotate(2.5deg) translateX(2px);
+    }
+
+    35% {
+        transform: scale(1.05) rotate(-2.5deg) translateX(-2px);
+    }
+
+    55% {
+        transform: scale(1.05) rotate(1.5deg) translateX(1.5px);
+    }
+
+    75% {
+        transform: scale(1.05) rotate(-1deg) translateX(-1px);
+    }
+
+    100% {
+        transform: scale(1.05) rotate(0deg) translateX(0);
+    }
 }
 
-.img > img {
-    height: 85px; /* Forzamos a que el logo no crezca más de 85px */
+.img>img {
+    height: 85px;
     width: auto;
     object-fit: contain;
 }
@@ -464,73 +589,330 @@ section {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    flex: 1; /* Empuja el contenedor para llenar el espacio vacío */
-    padding: 18px; /* Padding limpio por todos los lados */
+    flex: 1;
+    padding: 18px;
     font-size: 14px;
 }
 
-.container-formacion{
+/* ==========================================================================
+   7. SECCIÓN FORMACIÓN Y FOOTER
+   ========================================================================== */
+.container-formacion {
     display: flex;
     flex-direction: column;
 }
 
-.formaciones{
+.formaciones {
     display: flex;
     align-items: flex-start;
     gap: 15px;
     font-size: 15px;
 }
 
-.formaciones > p:first-child {
+.formaciones>p:first-child {
     min-width: 90px;
-    color: rgb(190, 190, 190);
+    color: var(--color-muted);
 }
 
-.formacion-status{
-    background-color: #D4AF37;
+.formacion-status {
+    background-color: var(--color-gold);
     width: 8px;
     height: 8px;
     border-radius: 50%;
-
     align-self: flex-start;
     transform: translateY(0.55em);
 }
 
-.text > p:last-child{
-    color: grey;
+.text>p:last-child {
+    color: var(--color-muted);
 }
 
 footer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    padding-bottom: 40px;
+    padding: 0 20px 40px 20px;
 }
 
-.cotainer-contact{
+.cotainer-contact {
     display: flex;
     gap: 15px;
 }
 
-.contact{
+.contact {
     padding: 4px 14px;
     border-radius: 20px;
-    background: rgba(238, 238, 238, 0.6);
+    background: var(--color-border);
 }
 
-.contact, .contact > a{
+.contact,
+.contact>a {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 13px;
     font-weight: 700;
-    color: #444;
+    color: var(--color-text);
     letter-spacing: 0.04em;
     margin-right: 5px;
     text-decoration: none;
 }
 
-.contact > .ti, 
-.contact > a > .ti{
+.contact>.ti,
+.contact>a>.ti {
     font-size: 18px;
+}
+
+/* ==========================================================================
+    8. COMPONENTE MODAL (Estética Sincronizada en Dorado)
+   ========================================================================== */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center; /* 1. Volvemos a centrarla verticalmente */
+    /* Eliminamos el overflow-y y el padding */
+}
+
+.overlay.activa {
+    display: flex;
+    animation: slideDown 0.6s ease forwards;
+}
+
+.modal {
+    background: var(--color-light);
+    border-radius: 12px;
+    width: 90%;
+    width: 800px;
+    height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#modal-keystore>.img {
+    background-color: #F5F5F5;
+    background-image: repeating-linear-gradient(45deg, #F5F5F5, #F5F5F5 10px, #EAEAEA 10px, #EAEAEA 20px);
+}
+
+#modal-gns3>.img {
+    background-color: #0B0D12;
+    background-image:
+        linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+#modal-seguridad>.img {
+    background: linear-gradient(135deg,
+            #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
+}
+
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 15px 15px 15px;
+}
+
+.titulo p b {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-dark);
+}
+
+/* Badges oscuros con contraste total dentro de la cabecera del modal */
+.titulo .stats span {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.descripcion-modal {
+    margin: 20px 25px;
+    color: var(--color-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.modal-stats {
+    display: flex;
+    gap: 15px;
+    margin: 30px 25px;
+}
+
+.stats-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px 15px;
+    flex: 1;
+    transition: transform 0.2s ease;
+}
+
+.stats-modal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+}
+
+.stats-modal i {
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.stats-modal p b {
+    color: var(--color-dark);
+    font-size: 0.95rem;
+}
+
+.stats-modal p:last-child {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-top: 5px;
+}
+
+.aprendi-modal {
+    margin: 25px;
+    border-left: 3px solid var(--color-gold);
+    padding-left: 20px;
+}
+
+.aprendi-modal>ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.aprendi-modal>ul p b {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--color-dark);
+    letter-spacing: 0.5px;
+}
+
+.aprendi-modal>ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.aprendi-modal>ul .ti-check {
+    color: var(--color-gold);
+    /* Checks dorados de alto impacto */
+    font-size: 1.1rem;
+    stroke-width: 2.5;
+}
+
+.modal-hash {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 25px;
+}
+
+.modal-hash>input {
+    padding: 5px;
+    border-radius: 6px;
+    border: 0.5px solid var(--color-border);
+    margin-bottom: 7px;
+}
+
+.modal-hash>input::placeholder {
+    padding: 8px;
+    color: #888;
+    font-size: 16px;
+}
+
+.section-divider-hash {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.section-divider-hash .line-modal {
+    margin: 0 25px;
+    flex: 1;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.output-hash {
+    background-color: var(--color-bg-card);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.construccion {
+    filter: blur(10px);
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.contenido-construccion {
+    position: relative;
+}
+
+.contenido-construccion>img {
+    width: 20%;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-close {
+    position: sticky; /* 4. Cambiamos absolute por sticky */
+    top: 12px;        /* Se quedará pegado a 12px del techo de la modal */
+    align-self: flex-end; /* Lo empuja a la derecha en tu contenedor flex */
+    margin-right: 12px;
+    margin-top: 12px;
+    border: none;
+    color: var(--color-dark);
+    background-color: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: var(--color-muted);
+    transition: color 0.3s ease-in-out;
+}
+
+.modal-activa {
+    pointer-events: none;
+    user-select: none;
+    filter: blur(5px);
+}
+
+a:focus-visible,
+.btn-proyecto:focus-visible,
+.btn-cv:focus-visible,
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
 }
