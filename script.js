@@ -11,13 +11,23 @@ const main = document.getElementById("carga-pagina");
 const overlay_gns3 = document.getElementById("overlay-gns3");
 const overlay_keystore = document.getElementById("overlay-keystore");
 const overlay_seguridad = document.getElementById("overlay-seguridad");
-const header = document.getElementById("header")
+const header = document.getElementById("header");
+
+const opciones = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.15,
+};
 
 let activa = null;
-document.body.classList.add("dark")
+let formyano = 0;
+let tecno = 0;
+
+document.body.classList.add("dark");
+
 document.addEventListener("click", (e) => {
   if (activa && e.target === activa) {
-    cerrarModal(activa)
+    cerrarModal(activa);
     return;
   }
 
@@ -30,10 +40,14 @@ document.addEventListener("click", (e) => {
     main.classList.add("modal-activa");
     header.style.animation = "slideIn 0.3s ease forwards";
 
-    header.addEventListener('animationend', ()=>{
-      header.style.display = "none";
-      header.style.animation = '';
-    },{ once: true })
+    header.addEventListener(
+      "animationend",
+      () => {
+        header.style.display = "none";
+        header.style.animation = "";
+      },
+      { once: true },
+    );
     return;
   }
 
@@ -44,10 +58,14 @@ document.addEventListener("click", (e) => {
     main.classList.add("modal-activa");
     header.style.animation = "slideIn 0.3s ease forwards";
 
-    header.addEventListener('animationend', ()=>{
-      header.style.display = "none";
-      header.style.animation = '';
-    },{ once: true })
+    header.addEventListener(
+      "animationend",
+      () => {
+        header.style.display = "none";
+        header.style.animation = "";
+      },
+      { once: true },
+    );
     return;
   }
 
@@ -58,22 +76,26 @@ document.addEventListener("click", (e) => {
     main.classList.add("modal-activa");
     header.style.animation = "slideIn 0.3s ease forwards";
 
-    header.addEventListener('animationend', ()=>{
-      header.style.display = "none";
-      header.style.animation = '';
-    },{ once: true })
+    header.addEventListener(
+      "animationend",
+      () => {
+        header.style.display = "none";
+        header.style.animation = "";
+      },
+      { once: true },
+    );
     return;
   }
 
   if (activa) {
-    cerrarModal(activa)
+    cerrarModal(activa);
   }
 });
 
-document.querySelectorAll(".modal-close").forEach(btn => {
+document.querySelectorAll(".modal-close").forEach((btn) => {
   btn.addEventListener("click", () => {
     if (activa) {
-      cerrarModal(activa)
+      cerrarModal(activa);
     }
   });
 });
@@ -86,15 +108,55 @@ toggle.addEventListener("click", (e) => {
   icon.classList.toggle("ti-moon");
 });
 
-function cerrarModal(overlay){
-    overlay.style.animation = "slideIn 0.3s ease forwards";
+function cerrarModal(overlay) {
+  overlay.style.animation = "slideIn 0.3s ease forwards";
 
-    // Esperar a que termine la animación para ocultarlo
-    overlay.addEventListener('animationend', () => {
-        overlay.classList.remove('activa');
-        overlay.style.animation = ''; // resetear para la próxima vez
-        activa = null;
-        main.classList.remove("modal-activa");
-        header.style.removeProperty("display")
-    }, { once: true }); // "once: true" para que el listener se elimine solo
+  // Esperar a que termine la animación para ocultarlo
+  overlay.addEventListener(
+    "animationend",
+    () => {
+      overlay.classList.remove("activa");
+      overlay.style.animation = ""; // resetear para la próxima vez
+      activa = null;
+      main.classList.remove("modal-activa");
+      header.style.removeProperty("display");
+    },
+    { once: true },
+  ); // "once: true" para que el listener se elimine solo
 }
+
+const observadorProyectos = new IntersectionObserver((entradas, observador) => {
+  entradas.forEach((entrada) => {
+    if (entrada.isIntersecting) {
+      entrada.target.classList.add("mostrar");
+      observadorProyectos.unobserve(entrada.target)
+    }
+  });
+}, opciones);
+
+const observar = document.querySelectorAll(".oculto");
+
+observar.forEach((observar) => {
+  observadorProyectos.observe(observar);
+});
+
+setTimeout(() =>{
+  const intervaltecno = setInterval(() => {
+    if (tecno < 10) {
+      tecno++;
+      document.getElementById("tecno").innerHTML = tecno + " +";
+    }else{
+      clearInterval(intervaltecno)
+    }
+  },100);
+
+  const intervalformyano = setInterval(() => {   
+    if (formyano < 3) {
+      formyano++;
+      document.getElementById("ano").innerHTML = formyano + " +";
+      document.getElementById("form").innerHTML = formyano;
+    }else{
+      clearInterval(intervalformyano)
+    }
+  },150);
+},800)
