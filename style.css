@@ -104,21 +104,23 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 0;
     background-color: var(--color-light);
+    padding: 15px 0;
     border-bottom: 0.5px solid var(--color-border);
     z-index:1000;
+    animation: slideDown 0.8s ease forwards;
 }
 
 
 .nav-container {
+    animation: slideDown 0.8s ease forwards;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: slideDown 0.8s ease forwards;
+
 }
 
 .nav-bar {
@@ -270,10 +272,10 @@ header a:hover {
 
 .btn-proyecto {
     font-size: 14px;
-    background-color: var(--color-dark);
+    background-color: #f0f0f0;
     border-radius: 10px;
     padding: 10px 16px;
-    color: var(--color-bg);
+    color: #111111;
     margin-right: 10px;
     text-decoration: none;
     cursor: pointer;
@@ -308,7 +310,7 @@ header a:hover {
     gap: 5px;
 }
 
-.stats>span {
+.stats > span {
     background-color: var(--color-border);
     color: var(--color-text);
     border-radius: 5px;
@@ -330,11 +332,66 @@ section {
 .container-main {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+}
+
+.presentacion{
+    color: #e0e0e0;
+}
+
+.container p {
+    font-size: 1.15rem; /* Equivale a unos 18px-19px. Súbelo a 1.25rem si lo quieres aún más grande */
+    line-height: 1.8;   /* Aumentamos el interlineado para que el texto respire y sea elegante */
+}
+
+.container h1 {
+    font-size: 2.8rem; /* Título principal con mucha más fuerza */
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    font-size: 2rem; 
+}
+
+.stats-inicio {
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;         
+    margin-top: 25px;
+}
+
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla inicial */
+    overflow: hidden;
+    z-index: -1; /* Lo manda al fondo de todo */
+    user-select: none;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que el vídeo se deforme, lo recorta para llenar la pantalla */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(17, 17, 17, 0.637); 
 }
 
 .logo-stats {
     background: var(--color-gold);
-    color: var(--color-light);
+    color: #1C1C1C;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -348,15 +405,15 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--color-border);
+    border: 1px solid #2e2e2e;
     border-radius: 15px;
     box-shadow: var(--shadow-premium);
-    padding: 15px;
+    padding: 20px;
 }
 
 .nombre p {
     font-size: 13px;
-    color: var(--color-text);
+    color: #e0e0e0;
 }
 
 .status-stats {
@@ -370,7 +427,7 @@ section {
 
 .status {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -378,17 +435,17 @@ section {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
-    gap: 8px;
+    gap: 13px;
 }
 
 .formacion {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--color-border);
+    border: 1px solid #2e2e2e;
     box-shadow: var(--shadow-premium);
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     flex: 1;
 }
 
@@ -400,18 +457,21 @@ section {
 
 .formacion p {
     font-size: 12px;
-    color: var(--color-text);
+    color: #e0e0e0;
     white-space: nowrap;
 }
 
 .contacto {
     margin-top: 15px;
-    border: 1px solid var(--color-border);
+    border: 1px solid #2e2e2e;
     box-shadow: var(--shadow-premium);
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     font-size: 12px;
-    color: var(--color-text);
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .contacto>span {
@@ -421,17 +481,20 @@ section {
 }
 
 .contacto>span>a {
-    color: var(--color-text);
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 13px;
 }
 
 .github>.ti-brand-github,
-.linkdin>.ti-brand-linkedin {
-    font-size: 20px;
+.linkdin>.ti-brand-linkedin,
+.correo>.ti-mail {
+    font-size: 23px;
     color: var(--color-gold);
 }
 
-.github {
-    margin-bottom: 5px;
+.github,.linkdin{
+    margin-bottom: 8px;
 }
 
 .conocimientos-container {
@@ -688,7 +751,7 @@ footer {
     background: var(--color-light);
     border-radius: 12px;
     width: 90%;
-    width: 800px;
+    max-width: 800px;
     height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -909,10 +972,181 @@ footer {
     filter: blur(5px);
 }
 
+.oculto{
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 a:focus-visible,
 .btn-proyecto:focus-visible,
 .btn-cv:focus-visible,
 .theme-toggle:focus-visible {
     outline: 2px solid var(--color-gold);
     outline-offset: 4px;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+
+/* 📱 PANTALLAS MEDIANAS (Tablets y portátiles pequeños) - Hasta 992px */
+@media (max-width: 992px) {
+    /* Inicio / Hero: Pasa de lado a lado a estar en columna */
+    .container-main {
+        flex-direction: column;
+        height: auto;
+        padding-top: 140px; /* Deja espacio para que el header no tape el contenido */
+        padding-bottom: 60px;
+        text-align: center; /* Centramos el contenido principal */
+    }
+
+    .presentacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-inicio {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    /* Sobre mí: Pasa a 1 columna */
+    .container-sobremi {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .text-aboutme {
+        max-width: 100%;
+    }
+
+    .skills-about {
+        width: 100%;
+    }
+
+    /* Skills: Pasa de 4 columnas a 2 columnas */
+    .container-skills {
+        flex-wrap: wrap;
+    }
+
+    .skill {
+        width: calc(50% - 10px);
+    }
+
+    /* Proyectos: Pasa a 2 columnas */
+    .line-proyects {
+        flex-wrap: wrap;
+    }
+
+    .proyect {
+        width: calc(50% - 8px);
+    }
+}
+
+/* 📱 PANTALLAS PEQUEÑAS (Móviles) - Hasta 768px */
+@media (max-width: 768px) {
+    /* Header / Navegación: Apilamos el logo y los enlaces */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .nav-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    header a {
+        font-size: 12px;
+    }
+
+    /* Tipografía Hero más pequeña para que no se salga de la pantalla */
+    .container h1 {
+        font-size: 2.2rem;
+    }
+
+    .container h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Estadísticas del Hero (Cajas de formación) en columna */
+    .stats-main {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .formacion {
+        width: 100%;
+    }
+
+    /* Skills y Proyectos: Pasan a 1 sola columna ocupando todo el ancho */
+    .skill {
+        width: 100%;
+    }
+
+    .proyect {
+        width: 100%;
+    }
+
+    /* Formación: Ajuste de textos */
+    .formaciones {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .formaciones > p:first-child {
+        margin-bottom: 5px;
+    }
+    
+    .formacion-status {
+        display: none; /* Ocultamos el puntito dorado en móvil para ahorrar espacio */
+    }
+
+    /* Footer: Datos de contacto en lista vertical */
+    .cotainer-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Ajustes internos de la ventana Modal para móviles */
+    .modal {
+        width: 95%; /* Que ocupe casi toda la pantalla en móvil */
+    }
+
+    .titulo p b {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .modal-stats {
+        flex-direction: column; /* Iconos descriptivos del proyecto en columna */
+        gap: 15px;
+        margin: 20px 15px;
+    }
+
+    .stats-modal {
+        width: 100%;
+    }
+
+    .aprendi-modal, .descripcion-modal, .modal-hash {
+        margin: 15px;
+    }
+
+    .modal-close {
+        top: 8px;
+        margin-right: 8px;
+        margin-top: 8px;
+    }
 }
