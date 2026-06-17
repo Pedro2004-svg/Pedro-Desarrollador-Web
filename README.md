@@ -35,7 +35,7 @@ Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y
 ## ✨ Características
 
 - 🎨 Diseño responsive, adaptado a móvil, tablet y escritorio
-- ⚡ Módulo en Rust/WebAssembly para [describe brevemente qué hace: ej. "cálculos de cifrado", "procesamiento de imágenes", "animaciones optimizadas"]
+- ⚡ Módulo en Rust/WebAssembly para generar el contenido hasheado en MD5 y SHA-256 de un texto proporcionado.
 - 🔒 Buenas prácticas de seguridad aplicadas en el desarrollo (sanitización de inputs, cabeceras seguras, etc.)
 - 🌐 Despliegue continuo mediante Vercel conectado a GitHub
 
