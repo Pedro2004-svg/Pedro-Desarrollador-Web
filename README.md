@@ -76,20 +76,6 @@ portfolio/
 
 ---
 
-## 💼 Proyectos destacados
-
-> *(Sustituye esta sección con tus proyectos reales)*
-
-### 🔹 [Nombre del proyecto 1]
-Breve descripción de qué hace, qué problema resuelve y qué tecnologías usaste.
-🔗 [Ver demo](#) | [Código](#)
-
-### 🔹 [Nombre del proyecto 2]
-Breve descripción.
-🔗 [Ver demo](#) | [Código](#)
-
----
-
 ## 📦 Instalación local
 
 Si alguien quiere clonar y ejecutar el proyecto en local:
@@ -97,7 +83,7 @@ Si alguien quiere clonar y ejecutar el proyecto en local:
 ```bash
 
 # Clonar el repositorio
-git clone https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git(https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git)
+git clone https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git
 
 ```
 
