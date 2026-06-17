@@ -227,16 +227,20 @@ header a:hover {
 }
 
 .disponible {
+    display: inline-flex;
+    align-items: center;
     padding: 4px 14px;
     border-radius: 20px;
     background: var(--color-border);
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-border);
+    -webkit-backdrop-filter: blur(10px); /*Soporte para Safari*/
     font-size: 13px;
     font-weight: 700;
     color: var(--color-text);
     letter-spacing: 0.04em;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .section-divider {
@@ -503,9 +507,46 @@ section {
     margin-top: 20px;
     display: flex;
 }
+/* ==========================================================================
+    5. SECCIÓN EXPERIENCIA EN PRACTICAS
+   ========================================================================== */
+
+    .container-exp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .job-item h3{
+        display: flex;
+        gap: 15px;
+    }
+
+    .job-item{
+        display: flex;
+        gap: 10px;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: flex-start;
+        border: 1px solid var(--color-border);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: var(--shadow-premium);
+        background-color: var(--color-bg);
+    }
+
+    .job-item > ul{
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .job-item li{
+        margin-bottom: 8px;
+        line-height: 1.6;
+    }
 
 /* ==========================================================================
-   5. SECCIÓN SOBRE MÍ Y SKILLS
+    6. SECCIÓN SOBRE MÍ Y SKILLS
    ========================================================================== */
 .container-sobremi {
     display: flex;
@@ -565,7 +606,7 @@ section {
 }
 
 /* ==========================================================================
-   6. SECCIÓN PROYECTOS Y TARJETAS
+   7. SECCIÓN PROYECTOS Y TARJETAS
    ========================================================================== */
 .line-projects {
     display: flex;
@@ -661,7 +702,7 @@ section {
 }
 
 /* ==========================================================================
-   7. SECCIÓN FORMACIÓN Y FOOTER
+   8. SECCIÓN FORMACIÓN Y FOOTER
    ========================================================================== */
 .container-formacion {
     display: flex;
@@ -729,7 +770,7 @@ footer {
 }
 
 /* ==========================================================================
-    8. COMPONENTE MODAL (Estética Sincronizada en Dorado)
+    9. COMPONENTE MODAL (Estética Sincronizada en Dorado)
    ========================================================================== */
 .overlay {
     display: none;
@@ -983,7 +1024,7 @@ a:focus-visible,
 }
 
 /* ==========================================================================
-   9. RESPONSIVE DESIGN (Media Queries)
+   10. RESPONSIVE DESIGN (Media Queries)
    ========================================================================== */
 
 /* 📱 PANTALLAS MEDIANAS (Tablets y portátiles pequeños) - Hasta 992px */
