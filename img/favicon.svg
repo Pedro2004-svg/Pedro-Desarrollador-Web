@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#1C1C1C;"/>
-  <text x="50%" y="55%" 
+  <rect width="32" height="32" rx="7" fill="#D4AF37"/>
+  <text x="50%" y="55%"
         font-family="monospace" 
         font-size="11" 
         font-weight="500"
-        fill="white" 
+        fill="black" 
         text-anchor="middle" 
         dominant-baseline="middle"
         letter-spacing="-1">
