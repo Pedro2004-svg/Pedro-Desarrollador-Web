@@ -17,7 +17,7 @@ Portfolio personal desarrollado para mostrar mis proyectos, habilidades y experi
 
 Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y compilada a **WebAssembly (Wasm)**, integrada directamente con JavaScript para aprovechar mayor rendimiento en cálculos o procesos concretos del front-end.
 
-🔗 **Demo en vivo:** [tu-portfolio.vercel.app](https://pedro-desarrollador-web.vercel.app/)
+🔗 **Demo en vivo:** [https://pedro-desarrollador-web.vercel.app/](https://pedro-desarrollador-web.vercel.app/)
 
 ---
 
@@ -94,7 +94,7 @@ git clone https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git
 - 📧 Email: pedro.pepicazo@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/pedro](https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278)
 - 🐙 GitHub: [https://github.com/Pedro2004-svg](https://github.com/Pedro2004-svg)
-- 🌐 Web: [https://pedro-desarrollador-web.vercel.app/] (https://pedro-desarrollador-web.vercel.app/)
+- 🌐 Web: [https://pedro-desarrollador-web.vercel.app/](https://pedro-desarrollador-web.vercel.app/)
 
 ---
 
