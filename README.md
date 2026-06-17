@@ -1,4 +1,4 @@
-# 🚀 Portfolio — [Tu Nombre]
+# 🚀 Portfolio — Pedro Pérez Picazo
 
 > Desarrollador Web | Técnico Superior en ASIR & DAW | Especializado en Ciberseguridad
 
@@ -46,16 +46,24 @@ Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y
 ```
 portfolio/
 ├── index.html
-├── /css
-│   └── styles.css
-├── /js
-│   └── main.js
-├── /wasm
-│   ├── pkg/          # módulo compilado de Rust a Wasm
-│   └── src/          # código fuente en Rust
-├── /assets
-│   └── img/
+├── styles.css
+├── script.js
+├── hash.js # Js que conecta con el modulo Wasm
+├── /pkg    # módulo compilado de Rust a Wasm
+│   ├── Hash_generator_bg.wasm
+│   ├── Hash_generator_bg.wasm.d.ts
+│   ├── Hash_generator.d.ts
+│   ├── Hash_generator.js
+│   └── package.json
+├── /img
+│   ├── favicon.svg
+│   ├── GNS3.png  
+│   ├── seguridad.png            
+│   └── tienda.png
+├── /vid
+│   └── humo.mp4
 └── README.md
+
 ```
 
 ---
@@ -87,26 +95,19 @@ Breve descripción.
 Si alguien quiere clonar y ejecutar el proyecto en local:
 
 ```bash
+
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/tu-portfolio.git
+git clone https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git(https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git)
 
-# Entrar en la carpeta
-cd tu-portfolio
-
-# Si usas el módulo Wasm, compílalo (requiere Rust y wasm-pack)
-wasm-pack build --target web
-
-# Servir el proyecto (por ejemplo con un servidor local simple)
-npx serve .
 ```
 
 ---
 
 ## 📫 Contacto
 
-- 📧 Email: tu-email@ejemplo.com
-- 💼 LinkedIn: [linkedin.com/in/tu-perfil](#)
-- 🐙 GitHub: [github.com/tu-usuario](#)
+- 📧 Email: pedro.pepicazo@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/pedro](https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278)
+- 🐙 GitHub: [https://github.com/Pedro2004-svg](https://github.com/Pedro2004-svg)
 - 🌐 Web: [tu-portfolio.vercel.app](#)
 
 ---
