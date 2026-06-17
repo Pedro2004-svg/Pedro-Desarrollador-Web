@@ -1,8 +1,8 @@
-# 🚀 Portfolio — Pedro Pérez Picazo
+# 🚀 Portafolio — Pedro Pérez Picazo
 
 > Desarrollador Web | Técnico Superior en ASIR & DAW | Especializado en Ciberseguridad
 
-[![Sitio web](https://img.shields.io/badge/demo-online-success?style=flat-square)](https://tu-portfolio.vercel.app)
+[![Sitio web](https://img.shields.io/badge/demo-online-success?style=flat-square)](https://pedro-desarrollador-web.vercel.app/)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -17,7 +17,7 @@ Portfolio personal desarrollado para mostrar mis proyectos, habilidades y experi
 
 Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y compilada a **WebAssembly (Wasm)**, integrada directamente con JavaScript para aprovechar mayor rendimiento en cálculos o procesos concretos del front-end.
 
-🔗 **Demo en vivo:** [tu-portfolio.vercel.app](https://tu-portfolio.vercel.app)
+🔗 **Demo en vivo:** [tu-portfolio.vercel.app](https://pedro-desarrollador-web.vercel.app/)
 
 ---
 
@@ -94,7 +94,7 @@ git clone https://github.com/Pedro2004-svg/Pedro-Desarrollador-Web.git
 - 📧 Email: pedro.pepicazo@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/pedro](https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278)
 - 🐙 GitHub: [https://github.com/Pedro2004-svg](https://github.com/Pedro2004-svg)
-- 🌐 Web: [tu-portfolio.vercel.app](#)
+- 🌐 Web: [https://pedro-desarrollador-web.vercel.app/] (https://pedro-desarrollador-web.vercel.app/)
 
 ---
 
