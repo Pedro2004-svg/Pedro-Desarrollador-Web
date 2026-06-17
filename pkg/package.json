@@ -1,0 +1,15 @@
+{
+  "name": "Hash_generator",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "Hash_generator_bg.wasm",
+    "Hash_generator.js",
+    "Hash_generator.d.ts"
+  ],
+  "main": "Hash_generator.js",
+  "types": "Hash_generator.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
