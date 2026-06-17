@@ -13,7 +13,7 @@
 
 ## 📋 Sobre este proyecto
 
-Portfolio personal desarrollado para mostrar mis proyectos, habilidades y experiencia como desarrollador web, combinando una base sólida en **administración de sistemas (ASIR)**, **desarrollo de aplicaciones web (DAW)** y una **especialización en ciberseguridad**.
+Portfolio personal desarrollado para mostrar mis habilidades y experiencia como desarrollador web, combinando una base sólida en **administración de sistemas (ASIR)**, **desarrollo de aplicaciones web (DAW)** y una **especialización en ciberseguridad**.
 
 Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y compilada a **WebAssembly (Wasm)**, integrada directamente con JavaScript para aprovechar mayor rendimiento en cálculos o procesos concretos del front-end.
 
@@ -26,7 +26,7 @@ Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y
 | Categoría | Tecnologías |
 |---|---|
 | **Front-end** | HTML5, CSS3, JavaScript (Vanilla) |
-| **Rendimiento** | Rust → WebAssembly (WASM) |
+| **Generador Hash** | Rust → WebAssembly (WASM) |
 | **Herramientas** | Git, GitHub, Vercel |
 | **Otros conocimientos** | Redes y sistemas (ASIR), Seguridad informática, Linux |
 
@@ -35,7 +35,7 @@ Como detalle técnico, parte de la lógica del sitio está escrita en **Rust** y
 ## ✨ Características
 
 - 🎨 Diseño responsive, adaptado a móvil, tablet y escritorio
-- ⚡ Módulo en Rust/WebAssembly para generar el contenido hasheado en MD5 y SHA-256 de un texto proporcionado.
+- ⚡ Módulo en Rust/WebAssembly para generar el contenido hasheado en MD5 y SHA-256 de un texto proporcionado, como herramienta.
 - 🔒 Buenas prácticas de seguridad aplicadas en el desarrollo (sanitización de inputs, cabeceras seguras, etc.)
 - 🌐 Despliegue continuo mediante Vercel conectado a GitHub
 
