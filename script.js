@@ -38,6 +38,7 @@ document.addEventListener("click", (e) => {
     overlay_gns3.classList.add("activa");
     activa = overlay_gns3;
     main.classList.add("modal-activa");
+    document.body.style.overflow = "hidden";
     header.style.animation = "slideIn 0.3s ease forwards";
 
     header.addEventListener(
@@ -56,6 +57,7 @@ document.addEventListener("click", (e) => {
     overlay_keystore.classList.add("activa");
     activa = overlay_keystore;
     main.classList.add("modal-activa");
+    document.body.style.overflow = "hidden";
     header.style.animation = "slideIn 0.3s ease forwards";
 
     header.addEventListener(
@@ -75,6 +77,7 @@ document.addEventListener("click", (e) => {
     activa = overlay_seguridad;
     main.classList.add("modal-activa");
     header.style.animation = "slideIn 0.3s ease forwards";
+    document.body.style.overflow = "hidden";
 
     header.addEventListener(
       "animationend",
@@ -119,6 +122,10 @@ function cerrarModal(overlay) {
       overlay.style.animation = ""; // resetear para la próxima vez
       activa = null;
       main.classList.remove("modal-activa");
+      document.body.style.overflow = "";
+      document.getElementById("input").value = ""
+      document.getElementById("md5").textContent = "-";
+      document.getElementById("sha256").textContent = "-";
       header.style.removeProperty("display");
     },
     { once: true },
@@ -129,7 +136,7 @@ const observadorProyectos = new IntersectionObserver((entradas, observador) => {
   entradas.forEach((entrada) => {
     if (entrada.isIntersecting) {
       entrada.target.classList.add("mostrar");
-      observadorProyectos.unobserve(entrada.target)
+      observadorProyectos.unobserve(entrada.target);
     }
   });
 }, opciones);
@@ -140,23 +147,23 @@ observar.forEach((observar) => {
   observadorProyectos.observe(observar);
 });
 
-setTimeout(() =>{
+setTimeout(() => {
   const intervaltecno = setInterval(() => {
     if (tecno < 10) {
       tecno++;
       document.getElementById("tecno").innerHTML = tecno + " +";
-    }else{
-      clearInterval(intervaltecno)
+    } else {
+      clearInterval(intervaltecno);
     }
-  },100);
+  }, 100);
 
-  const intervalformyano = setInterval(() => {   
+  const intervalformyano = setInterval(() => {
     if (formyano < 3) {
       formyano++;
       document.getElementById("ano").innerHTML = formyano + " +";
       document.getElementById("form").innerHTML = formyano;
-    }else{
-      clearInterval(intervalformyano)
+    } else {
+      clearInterval(intervalformyano);
     }
-  },150);
-},800)
+  }, 150);
+}, 800);

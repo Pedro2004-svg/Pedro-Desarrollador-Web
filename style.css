@@ -59,7 +59,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 .carga-pagina{
     animation: slideDown 0.8s ease forwards;
 }
@@ -508,6 +510,7 @@ section {
 .container-sobremi {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .text-aboutme {
@@ -564,7 +567,7 @@ section {
 /* ==========================================================================
    6. SECCIÓN PROYECTOS Y TARJETAS
    ========================================================================== */
-.line-proyects {
+.line-projects {
     display: flex;
     justify-content: space-between;
     gap: 15px;
@@ -572,7 +575,7 @@ section {
     padding-bottom: 25px;
 }
 
-.proyect:nth-child(1)>.img {
+.project:nth-child(1)>.img {
     background-color: #0B0D12;
     background-image:
         linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
@@ -580,12 +583,12 @@ section {
     background-size: 20px 20px;
 }
 
-.proyect:nth-child(2)>.img {
+.project:nth-child(2)>.img {
     background-color: #F5F5F5;
     background-image: repeating-linear-gradient(45deg, #F5F5F5, #F5F5F5 10px, #EAEAEA 10px, #EAEAEA 20px);
 }
 
-.proyect:nth-child(3)>.img {
+.project:nth-child(3)>.img {
     background: linear-gradient(135deg,
             #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
 }
@@ -598,7 +601,7 @@ section {
     align-items: center;
 }
 
-.proyect {
+.project {
     width: 100%;
     border: 1px solid var(--color-border);
     border-radius: 15px;
@@ -611,7 +614,7 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.proyect:hover {
+.project:hover {
     animation: balanceo 0.6s ease-in-out forwards;
     box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
 }
@@ -648,7 +651,7 @@ section {
     object-fit: contain;
 }
 
-.proyect-text {
+.project-text {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -894,16 +897,24 @@ footer {
 }
 
 .modal-hash>input {
-    padding: 5px;
+    padding: 10px;
     border-radius: 6px;
     border: 0.5px solid var(--color-border);
     margin-bottom: 7px;
+    background-color: var(--color-border);
 }
 
 .modal-hash>input::placeholder {
-    padding: 8px;
     color: #888;
     font-size: 16px;
+}
+
+.hash{
+    background-color: var(--color-bg);
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    max-width: 20%;
 }
 
 .section-divider-hash {
@@ -925,26 +936,6 @@ footer {
     background-color: var(--color-bg-card);
     padding: 15px;
     border-radius: 12px;
-}
-
-.construccion {
-    filter: blur(10px);
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-}
-
-.contenido-construccion {
-    position: relative;
-}
-
-.contenido-construccion>img {
-    width: 20%;
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .modal-close {
@@ -1042,11 +1033,11 @@ a:focus-visible,
     }
 
     /* Proyectos: Pasa a 2 columnas */
-    .line-proyects {
+    .line-projects {
         flex-wrap: wrap;
     }
 
-    .proyect {
+    .project {
         width: calc(50% - 8px);
     }
 }
@@ -1094,7 +1085,7 @@ a:focus-visible,
         width: 100%;
     }
 
-    .proyect {
+    .project {
         width: 100%;
     }
 
