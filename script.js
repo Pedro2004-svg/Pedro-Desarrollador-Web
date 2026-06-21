@@ -24,18 +24,10 @@ let formyano = 0;
 let tecno = 0;
 let scrollYGuardado = 0;
 
-// Bloqueo de scroll robusto para el fondo cuando hay un modal abierto.
-//
-// 1) Tocamos "html" Y "body" a la vez: si solo bloqueas "body", en cuanto
-//    "html" tiene un overflow-x propio (como aquí, para evitar el scroll
-//    horizontal fantasma), Chrome/Safari dejan de "delegar" el scroll de
-//    la página en el body y pasan a usar "html" como el verdadero
-//    elemento que scrollea — por eso bloquear solo body dejaba de servir.
-// 2) Tocamos solo "overflow-y" (no el shorthand "overflow"), para no
-//    pisar el "overflow-x: hidden" fijo que ya tienen por CSS.
-// 3) Además fijamos con position:fixed, porque en iOS Safari
-//    "overflow: hidden" por sí solo no basta para bloquear el scroll
-//    táctil (efecto "rebote") por debajo del modal.
+
+console.log("%c¿Inspeccionando el código? Me gusta tu estilo 👀", "color: #D4AF37; font-size: 14px; font-weight: bold;");
+console.log("Si buscas un desarrollador curioso, sigue leyendo: pedro.pepicazo@gmail.com");
+
 function bloquearScroll() {
   scrollYGuardado = window.scrollY;
   document.documentElement.style.overflowY = "hidden";
