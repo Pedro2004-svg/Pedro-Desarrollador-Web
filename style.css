@@ -911,7 +911,12 @@ footer {
     text-transform: uppercase;
     color: var(--color-dark);
 }
-
+.titulo .stats{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 /* Badges oscuros con contraste total dentro de la cabecera del modal */
 .titulo .stats span {
     background-color: var(--color-dark);
@@ -920,6 +925,33 @@ footer {
     padding: 4px 10px;
     border-radius: 6px;
     font-weight: 600;
+    z-index: 1000;
+}
+
+.titulo a{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.repo a > .ti-brand-github{
+    font-size : 13px;
+}
+.repo{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 0;
+}
+
+.repo a:hover{
+    transform: scale(1.15) rotate(3deg);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
 }
 
 .descripcion-modal {
