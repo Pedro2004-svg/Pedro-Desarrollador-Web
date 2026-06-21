@@ -47,6 +47,12 @@ body.dark {
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
@@ -58,11 +64,11 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    overflow-x: hidden;
 }
-html{
-    scroll-behavior: smooth;
-}
-.carga-pagina{
+
+.carga-pagina {
     animation: slideDown 0.8s ease forwards;
 }
 
@@ -105,14 +111,19 @@ textarea {
 header {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
+    /* Anclado a la derecha, sustituye a width: 100% */
+    margin: 0;
+    /* Limpieza de márgenes */
+    box-sizing: border-box;
     background-color: var(--color-light);
     padding: 15px 0;
     border-bottom: 0.5px solid var(--color-border);
-    z-index:1000;
+    z-index: 1000;
     animation: slideDown 0.8s ease forwards;
+    backdrop-filter: blur(10px);
 }
-
 
 .nav-container {
     animation: slideDown 0.8s ease forwards;
@@ -122,7 +133,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .nav-bar {
@@ -234,7 +244,8 @@ header a:hover {
     background: var(--color-border);
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-border);
-    -webkit-backdrop-filter: blur(10px); /*Soporte para Safari*/
+    -webkit-backdrop-filter: blur(10px);
+    /*Soporte para Safari*/
     font-size: 13px;
     font-weight: 700;
     color: var(--color-text);
@@ -316,7 +327,7 @@ header a:hover {
     gap: 5px;
 }
 
-.stats > span {
+.stats>span {
     background-color: var(--color-border);
     color: var(--color-text);
     border-radius: 5px;
@@ -341,31 +352,35 @@ section {
     align-items: center;
     gap: 2rem;
     height: 100vh;
+    height: 100dvh;
 }
 
-.presentacion{
+.presentacion {
     color: #e0e0e0;
 }
 
 .container p {
-    font-size: 1.15rem; /* Equivale a unos 18px-19px. Súbelo a 1.25rem si lo quieres aún más grande */
-    line-height: 1.8;   /* Aumentamos el interlineado para que el texto respire y sea elegante */
+    font-size: 1.15rem;
+    /* Equivale a unos 18px-19px. Súbelo a 1.25rem si lo quieres aún más grande */
+    line-height: 1.8;
+    /* Aumentamos el interlineado para que el texto respire y sea elegante */
 }
 
 .container h1 {
-    font-size: 2.8rem; /* Título principal con mucha más fuerza */
+    font-size: 2.8rem;
+    /* Título principal con mucha más fuerza */
     margin-bottom: 20px;
 }
 
 .container h2 {
-    font-size: 2rem; 
+    font-size: 2rem;
 }
 
 .stats-inicio {
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
-    gap: 8px;         
+    gap: 8px;
     margin-top: 25px;
 }
 
@@ -374,16 +389,22 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ocupa toda la pantalla inicial */
+    height: 100%;
     overflow: hidden;
-    z-index: -1; /* Lo manda al fondo de todo */
+    z-index: -1;
     user-select: none;
 }
 
 .bg-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que el vídeo se deforme, lo recorta para llenar la pantalla */
+    object-fit: cover;
+    /* Evita que el vídeo se deforme, lo recorta para llenar la pantalla */
+}
+
+.hero-wrapper {
+    position: relative;
+    width: 100%;
 }
 
 .video-overlay {
@@ -391,8 +412,8 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background: rgba(17, 17, 17, 0.637); 
+    height: 100%;
+    background: rgba(17, 17, 17, 0.30);
 }
 
 .logo-stats {
@@ -499,7 +520,8 @@ section {
     color: var(--color-gold);
 }
 
-.github,.linkdin{
+.github,
+.linkdin {
     margin-bottom: 8px;
 }
 
@@ -507,43 +529,48 @@ section {
     margin-top: 20px;
     display: flex;
 }
+
 /* ==========================================================================
     5. SECCIÓN EXPERIENCIA EN PRACTICAS
    ========================================================================== */
 
-    .container-exp{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .job-item h3{
-        display: flex;
-        gap: 15px;
-    }
+.container-exp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-    .job-item{
-        display: flex;
-        gap: 10px;
-        flex-direction: column; 
-        justify-content: center;
-        align-items: flex-start;
-        border: 1px solid var(--color-border);
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: var(--shadow-premium);
-        background-color: var(--color-bg);
-    }
+.job-item h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    gap: 8px 15px;
+}
 
-    .job-item > ul{
-        padding-left: 20px;
-        margin-top: 10px;
-    }
+.job-item {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid var(--color-border);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-premium);
+    background-color: var(--color-bg);
+}
 
-    .job-item li{
-        margin-bottom: 8px;
-        line-height: 1.6;
-    }
+.job-item>ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.job-item li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
 
 /* ==========================================================================
     6. SECCIÓN SOBRE MÍ Y SKILLS
@@ -555,7 +582,17 @@ section {
 }
 
 .text-aboutme {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
     max-width: 50%;
+}
+
+strong {
+    color: var(--color-gold);
+    font-weight: 700;
 }
 
 .labels {
@@ -616,6 +653,38 @@ section {
     padding-bottom: 25px;
 }
 
+
+.project::before {
+    content: "↗";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(17, 17, 17, 0.85);
+    color: var(--color-gold);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(-6px) scale(0.7);
+    transition: transform 0.25s ease;
+    z-index: 3;
+    pointer-events: none;
+    /* que no interfiera con el click en la tarjeta */
+}
+
+.project:hover::before {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 .project:nth-child(1)>.img {
     background-color: #0B0D12;
     background-image:
@@ -658,6 +727,10 @@ section {
 .project:hover {
     animation: balanceo 0.6s ease-in-out forwards;
     box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+}
+
+.ver_mas {
+    display: none;
 }
 
 @keyframes balanceo {
@@ -782,7 +855,8 @@ footer {
     background: rgba(0, 0, 0, 0.6);
     z-index: 999;
     justify-content: center;
-    align-items: center; /* 1. Volvemos a centrarla verticalmente */
+    align-items: center;
+    /* 1. Volvemos a centrarla verticalmente */
     /* Eliminamos el overflow-y y el padding */
 }
 
@@ -950,7 +1024,7 @@ footer {
     font-size: 16px;
 }
 
-.hash{
+.hash {
     background-color: var(--color-bg);
     padding: 10px;
     border: none;
@@ -980,9 +1054,12 @@ footer {
 }
 
 .modal-close {
-    position: sticky; /* 4. Cambiamos absolute por sticky */
-    top: 12px;        /* Se quedará pegado a 12px del techo de la modal */
-    align-self: flex-end; /* Lo empuja a la derecha en tu contenedor flex */
+    position: sticky;
+    /* 4. Cambiamos absolute por sticky */
+    top: 12px;
+    /* Se quedará pegado a 12px del techo de la modal */
+    align-self: flex-end;
+    /* Lo empuja a la derecha en tu contenedor flex */
     margin-right: 12px;
     margin-top: 12px;
     border: none;
@@ -1004,15 +1081,50 @@ footer {
     filter: blur(5px);
 }
 
-.oculto{
+.modal-abierta {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+.oculto {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(-40px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .mostrar {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Ocultar el botón hamburguesa en escritorio */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.hamburger.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 a:focus-visible,
@@ -1024,48 +1136,71 @@ a:focus-visible,
 }
 
 /* ==========================================================================
-   10. RESPONSIVE DESIGN (Media Queries)
+   10. RESPONSIVE DESIGN
    ========================================================================== */
 
-/* 📱 PANTALLAS MEDIANAS (Tablets y portátiles pequeños) - Hasta 992px */
-@media (max-width: 992px) {
-    /* Inicio / Hero: Pasa de lado a lado a estar en columna */
+/*
+   Tres puntos de corte, cada uno con un objetivo claro:
+   - 1024px → tablets y portátiles pequeños: el layout pasa a 1-2 columnas
+              y el menú cambia a desplegable (antes de que se apriete).
+   - 640px  → móviles: todo a una columna, tarjetas a ancho completo.
+   - 400px  → móviles muy estrechos: ajustes finos de tipografía y espaciado.
+*/
+
+/* ──────────────────────────────────────────────────────────────────────
+   1024px — Tablets y portátiles pequeños
+   ────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* --- Hero --- */
     .container-main {
         flex-direction: column;
         height: auto;
-        padding-top: 140px; /* Deja espacio para que el header no tape el contenido */
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-top: 140px;
         padding-bottom: 60px;
-        text-align: center; /* Centramos el contenido principal */
+        text-align: center;
     }
 
     .presentacion {
-        display: flex;
-        flex-direction: column;
         align-items: center;
     }
 
-    .btn-inicio {
-        display: flex;
+    .conocimientos-container {
         justify-content: center;
-        margin-bottom: 30px;
+        flex-wrap: wrap;
     }
 
-    /* Sobre mí: Pasa a 1 columna */
+    .btn-inicio {
+        justify-content: center;
+    }
+
+    /* --- Sobre mí: 1 columna centrada --- */
     .container-sobremi {
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
     }
 
     .text-aboutme {
         max-width: 100%;
+        align-items: center;
+        text-align: center;
     }
 
     .skills-about {
         width: 100%;
     }
 
-    /* Skills: Pasa de 4 columnas a 2 columnas */
-    .container-skills {
+    /* --- Skills y Proyectos: 2 columnas --- */
+    .container-skills,
+    .line-projects {
         flex-wrap: wrap;
     }
 
@@ -1073,88 +1208,158 @@ a:focus-visible,
         width: calc(50% - 10px);
     }
 
-    /* Proyectos: Pasa a 2 columnas */
-    .line-projects {
-        flex-wrap: wrap;
-    }
-
     .project {
         width: calc(50% - 8px);
     }
-}
 
-/* 📱 PANTALLAS PEQUEÑAS (Móviles) - Hasta 768px */
-@media (max-width: 768px) {
-    /* Header / Navegación: Apilamos el logo y los enlaces */
+    .project::before {
+        display: none;
+    }
+
+    .ver_mas {
+        display: block;
+        text-align: center;
+        color: var(--color-gold);
+    }
+
+    /* --- Menú: pasa a desplegable a partir de aquí, antes de que
+       se apriete el nav de escritorio --- */
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
     .nav-container {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px;
+        position: relative;
+        justify-content: center;
     }
 
     .nav-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--color-light);
+        box-shadow: var(--shadow-premium);
+        transition: max-height 0.35s ease;
     }
 
-    header a {
+    .nav-bar.active {
+        max-height: 420px;
+    }
+
+    .nav-bar a {
+        width: 100%;
+        padding: 14px 20px;
+        border-top: 0.5px solid var(--color-border);
+        white-space: normal;
+    }
+
+    .nav-bar .theme-toggle {
+        align-self: center;
+        margin: 16px 0;
+    }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   640px — Móviles
+   ────────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+    .nav-container {
+        padding: 0 15px; /* Reducimos un poco el padding lateral */
+        width: 100%;
+    }
+    
+    /* Ajustamos un poco el tamaño del logo si es necesario */
+    .logo-name {
         font-size: 12px;
     }
 
-    /* Tipografía Hero más pequeña para que no se salga de la pantalla */
+    /* --- Tipografía principal --- */
     .container h1 {
         font-size: 2.2rem;
     }
 
     .container h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
-    /* Estadísticas del Hero (Cajas de formación) en columna */
+    /* --- Tarjetas de estadísticas del hero: ancho completo --- */
     .stats-main {
         flex-direction: column;
         gap: 15px;
     }
 
-    .formacion {
-        width: 100%;
+    .status-stats {
+        margin-left: 12px;
+        /* evita que el punto se vaya muy a la derecha en tarjetas estrechas */
     }
 
-    /* Skills y Proyectos: Pasan a 1 sola columna ocupando todo el ancho */
-    .skill {
-        width: 100%;
-    }
-
+    .formacion,
+    .skill,
     .project {
         width: 100%;
     }
 
-    /* Formación: Ajuste de textos */
-    .formaciones {
+    /* --- CTA del hero: botones apilados y a ancho completo --- */
+    .btn-inicio {
+        display: flex;
         flex-direction: column;
-        gap: 5px;
-        margin-bottom: 20px;
-    }
-    
-    .formaciones > p:first-child {
-        margin-bottom: 5px;
-    }
-    
-    .formacion-status {
-        display: none; /* Ocultamos el puntito dorado en móvil para ahorrar espacio */
-    }
-
-    /* Footer: Datos de contacto en lista vertical */
-    .cotainer-contact {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
     }
 
-    /* Ajustes internos de la ventana Modal para móviles */
+    .btn-proyecto,
+    .btn-cv {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    /* --- Formación: lectura vertical --- */
+    .formaciones {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 25px;
+    }
+
+    .formaciones>p:first-child {
+        margin-bottom: 0;
+        color: var(--color-gold);
+        font-weight: 700;
+    }
+
+    .formacion-status {
+        display: none;
+        /* ahorra espacio vital en móvil */
+    }
+
+    /* --- Footer: botones grandes y fáciles de tocar --- */
+    .cotainer-contact {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    /* --- Modal: ajustes táctiles --- */
     .modal {
-        width: 95%; /* Que ocupe casi toda la pantalla en móvil */
+        width: 95%;
+        height: 85vh;
+        height: 85dvh;
+        /* deja margen a las barras del navegador móvil */
     }
 
     .titulo p b {
@@ -1163,7 +1368,7 @@ a:focus-visible,
     }
 
     .modal-stats {
-        flex-direction: column; /* Iconos descriptivos del proyecto en columna */
+        flex-direction: column;
         gap: 15px;
         margin: 20px 15px;
     }
@@ -1172,13 +1377,67 @@ a:focus-visible,
         width: 100%;
     }
 
-    .aprendi-modal, .descripcion-modal, .modal-hash {
-        margin: 15px;
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        background: var(--color-bg-card);
+        border-radius: 50%;
+    }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   400px — Móviles muy estrechos
+   ────────────────────────────────────────────────────────────────────── */
+@media (max-width: 400px) {
+
+    section {
+        padding: 0 16px;
     }
 
-    .modal-close {
-        top: 8px;
-        margin-right: 8px;
-        margin-top: 8px;
+    .container h1 {
+        font-size: 1.9rem;
+    }
+
+    .container h2 {
+        font-size: 1.2rem;
+    }
+
+    .container p {
+        font-size: 1rem;
+    }
+
+    /* Quitamos el nowrap si el texto no cabe, mejor que se rompa la línea
+       a que desborde horizontalmente */
+    .formacion p,
+    header a {
+        white-space: normal;
+    }
+
+    .titulo p b {
+        font-size: 1.15rem;
+    }
+
+    .modal-hash {
+        margin: 20px 15px;
+    }
+
+    .hash {
+        max-width: 100%;
+    }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Accesibilidad: respeta la preferencia de "reducir movimiento"
+   ────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
     }
 }

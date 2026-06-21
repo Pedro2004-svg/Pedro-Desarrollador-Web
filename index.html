@@ -65,75 +65,82 @@
                 </div>
             </nav>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </header>
     <div class="carga-pagina" id="carga-pagina">
         <main id="main">
-            <section id="inicio">
-                <div class="video-background-container">
-                    <video autoplay loop muted playsinline class="bg-video">
-                        <source src="/vid/humo.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-overlay"></div>
-                </div>
-                <div class="container-main">
-                    <div class="container">
-                        <div class="presentacion">
-                            <h1 class="titulo-principal">Hola, <span class="destacado">soy Pedro</span></h1>
-                            <h2>Desarrollador Web</h2>
-                            <p>Graduado en DAW con formación en ASIR y especialización en Ciberseguridad.</p>
-                            <p>Diseño y desarrollo aplicaciones web limpias, funcionales y seguras.</p>
+            <div class="hero-wrapper">
+                <section id="inicio">
+                    <div class="video-background-container">
+                        <video autoplay loop muted playsinline preload="auto" class="bg-video">
+                            <source src="/vid/humo.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="container-main">
+                        <div class="container">
+                            <div class="presentacion">
+                                <h1 class="titulo-principal">Hola, <span class="destacado">soy Pedro</span></h1>
+                                <h2>Desarrollador Web</h2>
+                                <p>Graduado en DAW con formación en ASIR y especialización en Ciberseguridad.</p>
+                                <p>Diseño y desarrollo aplicaciones web limpias, funcionales y seguras.</p>
+                            </div>
+                            <div class="conocimientos-container">
+                                <span class="disponible">Ciberseguridad</span>
+                                <span class="disponible">Backend</span>
+                                <span class="disponible">Frontend</span>
+                            </div>
+                            <div class="btn-inicio">
+                                <a href="#proyectos" class="btn-proyecto">Ver Proyectos</a>
+                                <a href="cv/Pedro Perez - CV.pdf.pdf" class="btn-cv" download>Descargar CV</a>
+                            </div>
                         </div>
-                        <div class="conocimientos-container">
-                            <span class="disponible">Ciberseguridad</span>
-                            <span class="disponible">Backend</span>
-                            <span class="disponible">Frontend</span>
-                        </div>
-                        <div class="btn-inicio">
-                            <a href="#proyectos" class="btn-proyecto">Ver Proyectos</a>
-                            <a href="cv/Pedro Perez - CV.pdf.pdf" class="btn-cv" download>Descargar CV</a>
+                        <div class="stats-inicio">
+                            <div class="nombre">
+                                <span class="logo-stats">P</span>
+                                <div class="texto-stats">
+                                    <p><b>Pedro</b></p>
+                                    <p>Dev & Sec &middot; España</p>
+                                </div>
+                                <div class="status">
+                                    <span class="status-stats"></span>
+                                    <p>Disponible</p>
+                                </div>
+                            </div>
+                            <div class="stats-main">
+                                <div class="formacion">
+                                    <span id="ano"><b>0</b></span>
+                                    <p>Años en formación</p>
+                                </div>
+                                <div class="formacion">
+                                    <span id="form"><b>0</b></span>
+                                    <p>Titulaciones</p>
+                                </div>
+                                <div class="formacion">
+                                    <span id="tecno"><b>0</b></span>
+                                    <p>Tecnologías</p>
+                                </div>
+                            </div>
+                            <div class="contacto">
+                                <span class="github"><i class="ti ti-brand-github"></i><a
+                                        href="https://github.com/Pedro2004-svg" target="_blank"
+                                        rel="noopener noreferrer">github.com/Pedro</a></span>
+                                <span class="linkdin"><i class="ti ti-brand-linkedin"></i><a
+                                        href="https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278" target="_blank"
+                                        rel="noopener noreferrer">linkedin.com/Pedro</a></span>
+                                <span class="correo"><i class="ti ti-mail"></i><a href="mailto:pedro.pepicazo@gmail.com"
+                                        class="contact-chip">
+                                        pedro.pepicazo@gmail.com
+                                    </a></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="stats-inicio">
-                        <div class="nombre">
-                            <span class="logo-stats">P</span>
-                            <div class="texto-stats">
-                                <p><b>Pedro</b></p>
-                                <p>Dev & Sec &middot; España</p>
-                            </div>
-                            <div class="status">
-                                <span class="status-stats"></span>
-                                <p>Disponible</p>
-                            </div>
-                        </div>
-                        <div class="stats-main">
-                            <div class="formacion">
-                                <span id="ano"><b>0</b></span>
-                                <p>Años en formación</p>
-                            </div>
-                            <div class="formacion">
-                                <span id="form"><b>0</b></span>
-                                <p>Titulaciones</p>
-                            </div>
-                            <div class="formacion">
-                                <span id="tecno"><b>0</b></span>
-                                <p>Tecnologías</p>
-                            </div>
-                        </div>
-                        <div class="contacto">
-                            <span class="github"><i class="ti ti-brand-github"></i><a
-                                    href="https://github.com/Pedro2004-svg" target="_blank"
-                                    rel="noopener noreferrer">github.com/Pedro</a></span>
-                            <span class="linkdin"><i class="ti ti-brand-linkedin"></i><a
-                                    href="https://www.linkedin.com/in/pedro-pérez-picazo-4ba142278" target="_blank"
-                                    rel="noopener noreferrer">linkedin.com/Pedro</a></span>
-                            <span class="correo"><i class="ti ti-mail"></i><a href="mailto:pedro.pepicazo@gmail.com"
-                                    class="contact-chip">
-                                    pedro.pepicazo@gmail.com
-                            </a></span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
             <section id="sobre_mi" class="oculto">
                 <div class="section-divider">
                     <span>Sobre mí</span>
@@ -141,24 +148,30 @@
                 </div>
                 <div class="container-sobremi">
                     <div class="text-aboutme">
-                        <p>Soy desarrollador web recién graduado con una base técnica amplia.
-                            Mi paso por ASIR me dio una visión sólida de redes, sistemas y servidores, además de
-                            explorar el diseño
-                            de estructuras de red funcionales y ordenadas. Con conocimiento de configurar DHCP y DNS.
-                            y la especialización en Ciberseguridad me hizo pensar siempre en escribir código seguro.</p>
-                        <br>
-                        <p>Me apasiona construir proyectos de principio a fin:
-                            desde el diseño de la interfaz hasta el despliegue en producción.
-                            He diseñado y desarrollado proyectos en Node.js y JavaScript. Además de tener conocimientos
-                            básicos de Python y Java.
+                        <p>
+                            ¡Hola! Soy un desarrollador web recién graduado en <strong>DAW</strong> con una visión
+                            integral del ciclo de
+                            vida del software.
+                            Mi viaje técnico comenzó en la administración de sistemas informáticos en red
+                            (<strong>ASIR</strong>) y la
+                            especialización en <strong>Ciberseguridad</strong>.
+                            Allí aprendí a diseñar redes ordenadas y a asegurar servidores, lo que hoy me permite
+                            escribir código moderno
+                            que no solo funciona bien, sino que es robusto y seguro desde su concepción.
                         </p>
-                        <br>
-                        <p>Actualmente, me encuentro aprendiendo Rust, ya no solo para el entorno web, sino para
-                            aplicaciones de escritorio,
-                            ya que me interesa aprender lenguajes nuevos y diferentes formas de aplicar el desarrollo de
-                            software.
+                        <p>
+                            Disfruto tomando el control completo de mis proyectos: diseño la interfaz, programo la
+                            lógica con
+                            <strong>JavaScript</strong> y <strong>Node.js</strong>, y me encargo del despliegue en
+                            producción.
+                            También me defiendo en Python y Java.
                         </p>
-                        <br>
+                        <p>
+                            Como me encanta retarme y explorar nuevas formas de crear software, actualmente estoy
+                            aprendiendo
+                            <strong>Rust</strong> para expandir mis horizontes hacia las aplicaciones de escritorio y el
+                            máximo rendimiento.
+                        </p>
                         <span class="disponible">Disponible para trabajar</span>
                     </div>
                     <div class="skills-about">
@@ -198,22 +211,44 @@
                     <div class="line"></div>
                 </div>
                 <div class="container-exp">
+                    <!-- Prácticas DAW -->
                     <div class="job-item oculto">
-                        <h3>Desarrollador FrontEnd (Prácticas DAW) - AvosTech Prosegur <span class="disponible">4 meses</span></h3>
-                        <p>Desarrollo de interfaces de usuario e integración en el flujo de trabajo de un proyecto empresarial a gran escala. Experiencia directa en:</p>
+                        <h3>Desarrollador FrontEnd (Prácticas DAW) - AvosTech Prosegur
+                            <span class="disponible">4 meses</span>
+                        </h3>
+                        <p>Colaboración en el área de desarrollo de interfaces de usuario para un proyecto empresarial a
+                            gran escala, integrándome en el flujo de trabajo de un equipo profesional. Experiencia
+                            destacada en:</p>
                         <ul>
-                            <li>Comprensión y manejo de arquitectura de software en entornos reales de producción.</li>
-                            <li>Resolución de problemas técnicos y aplicación de buenas prácticas de desarrollo.</li>
-                            <li>Colaboración activa y comunicación constante con el equipo de desarrollo.</li>
+                            <li>Análisis y comprensión de la arquitectura visual de la aplicación en entornos de
+                                <strong>producción</strong>.
+                            </li>
+                            <li>Identificación y reporte de incidencias visuales (bugs) asegurando los estándares de
+                                <strong>diseño e interfaz</strong>.
+                            </li>
+                            <li>Trabajo colaborativo y comunicación constante dentro del equipo utilizando
+                                <strong>metodologías ágiles</strong>.
+                            </li>
+                            <li>Uso de herramientas de control de versiones (<strong>Git / GitHub</strong>) para la
+                                gestión y seguimiento del proyecto.</li>
                         </ul>
                     </div>
-                    <div class="job-item oculto" >
-                        <h3>Soporte Técnico CAU (Prácticas ASIR) - Fractalia / Prosegur <span class="disponible">3 meses</span></h3>
-                        <p>Soporte técnico de Nivel 1 y gestión de incidencias para la infraestructura de Prosegur. Experiencia directa en:</p>
+
+                    <!-- Prácticas ASIR -->
+                    <div class="job-item oculto">
+                        <h3>Soporte Técnico CAU (Prácticas ASIR) - Fractalia / Prosegur
+                            <span class="disponible">3 meses</span>
+                        </h3>
+                        <p>Soporte técnico de Nivel 1 y gestión integral de incidencias para la infraestructura global
+                            de Prosegur. Experiencia destacada en:</p>
                         <ul>
-                            <li>Resolución de tickets e incidencias mediante conexión remota a equipos corporativos.</li>
-                            <li>Administración y configuración de fallos en Sistemas Operativos Windows.</li>
-                            <li>Manejo de redes corporativas y atención directa al usuario final.</li>
+                            <li>Resolución de tickets mediante herramientas de ticketing y <strong>conexión
+                                    remota</strong> a equipos corporativos.</li>
+                            <li>Diagnóstico y reparación de configuraciones en sistemas operativos
+                                <strong>Windows</strong> e infraestructura de red.
+                            </li>
+                            <li>Atención directa y eficiente al usuario final, garantizando la continuidad y
+                                operatividad del negocio.</li>
                         </ul>
                     </div>
                 </div>
@@ -285,6 +320,7 @@
                                 <span>Linux</span>
                                 <span>Windows</span>
                             </div>
+                            <p class="ver_mas">Ver más ↗</p>
                         </div>
                     </div>
 
@@ -304,6 +340,7 @@
                                 <span>SQL</span>
                                 <span>Capacitor</span>
                             </div>
+                            <p class="ver_mas">Ver más ↗</p>
                         </div>
                     </div>
 
@@ -319,6 +356,7 @@
                                 <span>WebAssembly</span>
                                 <span>JavaScript</span>
                             </div>
+                            <p class="ver_mas">Ver más ↗</p>
                         </div>
                     </div>
 
@@ -397,6 +435,7 @@
                     <i class="ti ti-map-pin"></i>
                     <p>España</p>
                 </div>
+            </div>
         </footer>
     </div>
     <div class="overlay" id="overlay-gns3">
@@ -432,7 +471,7 @@
                 <div class="modal-stats">
                     <div class="stats-modal">
                         <i class="ti ti-router"></i>
-                        <p><b>topología</b></p>
+                        <p><b>Topología</b></p>
                         <p>Router Central con switches y 3 segmentos de red diferenciados.</p>
                     </div>
 

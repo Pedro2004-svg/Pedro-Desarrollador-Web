@@ -22,6 +22,46 @@ const opciones = {
 let activa = null;
 let formyano = 0;
 let tecno = 0;
+let scrollYGuardado = 0;
+
+// Bloqueo de scroll robusto para el fondo cuando hay un modal abierto.
+//
+// 1) Tocamos "html" Y "body" a la vez: si solo bloqueas "body", en cuanto
+//    "html" tiene un overflow-x propio (como aquí, para evitar el scroll
+//    horizontal fantasma), Chrome/Safari dejan de "delegar" el scroll de
+//    la página en el body y pasan a usar "html" como el verdadero
+//    elemento que scrollea — por eso bloquear solo body dejaba de servir.
+// 2) Tocamos solo "overflow-y" (no el shorthand "overflow"), para no
+//    pisar el "overflow-x: hidden" fijo que ya tienen por CSS.
+// 3) Además fijamos con position:fixed, porque en iOS Safari
+//    "overflow: hidden" por sí solo no basta para bloquear el scroll
+//    táctil (efecto "rebote") por debajo del modal.
+function bloquearScroll() {
+  scrollYGuardado = window.scrollY;
+  document.documentElement.style.overflowY = "hidden";
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${scrollYGuardado}px`;
+  document.body.style.left = "0";
+  document.body.style.width = "100%";
+  document.body.style.overflowY = "hidden";
+}
+
+function desbloquearScroll() {
+  document.documentElement.style.overflowY = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.width = "";
+  document.body.style.overflowY = "";
+
+  // Restaurar la posición de scroll de golpe, sin que se vea la animación
+  // de "scroll-behavior: smooth" del resto de la página
+  const htmlEl = document.documentElement;
+  const comportamientoPrevio = htmlEl.style.scrollBehavior;
+  htmlEl.style.scrollBehavior = "auto";
+  window.scrollTo(0, scrollYGuardado);
+  htmlEl.style.scrollBehavior = comportamientoPrevio;
+}
 
 document.body.classList.add("dark");
 
@@ -38,7 +78,7 @@ document.addEventListener("click", (e) => {
     overlay_gns3.classList.add("activa");
     activa = overlay_gns3;
     main.classList.add("modal-activa");
-    document.body.style.overflow = "hidden";
+    bloquearScroll();
     header.style.animation = "slideIn 0.3s ease forwards";
 
     header.addEventListener(
@@ -57,7 +97,7 @@ document.addEventListener("click", (e) => {
     overlay_keystore.classList.add("activa");
     activa = overlay_keystore;
     main.classList.add("modal-activa");
-    document.body.style.overflow = "hidden";
+    bloquearScroll();
     header.style.animation = "slideIn 0.3s ease forwards";
 
     header.addEventListener(
@@ -77,7 +117,7 @@ document.addEventListener("click", (e) => {
     activa = overlay_seguridad;
     main.classList.add("modal-activa");
     header.style.animation = "slideIn 0.3s ease forwards";
-    document.body.style.overflow = "hidden";
+    bloquearScroll();
 
     header.addEventListener(
       "animationend",
@@ -122,8 +162,9 @@ function cerrarModal(overlay) {
       overlay.style.animation = ""; // resetear para la próxima vez
       activa = null;
       main.classList.remove("modal-activa");
-      document.body.style.overflow = "";
-      document.getElementById("input").value = ""
+      document.body.classList.remove("modal-abierta"); // por si quedó de una versión anterior
+      desbloquearScroll();
+      document.getElementById("input").value = "";
       document.getElementById("md5").textContent = "-";
       document.getElementById("sha256").textContent = "-";
       header.style.removeProperty("display");
@@ -167,3 +208,21 @@ setTimeout(() => {
     }
   }, 150);
 }, 800);
+
+const hamburger = document.getElementById("hamburger");
+const navBar = document.querySelector(".nav-bar");
+
+hamburger.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+
+  // Opcional: Cambiar las barras a forma de "X"
+  hamburger.classList.toggle("is-active");
+});
+
+// Cerrar al hacer clic en cualquier enlace del menú
+document.querySelectorAll(".nav-bar a").forEach((n) =>
+  n.addEventListener("click", () => {
+    navBar.classList.remove("active");
+    hamburger.classList.remove("is-active");
+  }),
+);
