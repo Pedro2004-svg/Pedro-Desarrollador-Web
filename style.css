@@ -896,7 +896,6 @@ footer {
             #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
 }
 
-
 .titulo {
     display: flex;
     flex-direction: column;
@@ -1299,6 +1298,14 @@ a:focus-visible,
     .nav-bar .theme-toggle {
         align-self: center;
         margin: 16px 0;
+    }
+
+    .repo{
+        position: initial;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
     }
 }
 
