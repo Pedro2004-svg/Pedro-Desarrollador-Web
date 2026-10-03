@@ -21,8 +21,6 @@
     --color-muted: #666666;
     /* Para descripciones secundarias */
     --color-border: #eaeaea;
-    /* Líneas divisorias finas y limpias */
-    --color-btn-proyecto: #3a3a3a;
 
     /* Sombra premium con un sutil destello de tu dorado brillante */
     --shadow-premium: 0 4px 14px rgba(212, 175, 55, 0.15);
@@ -38,7 +36,6 @@ body.dark {
     --color-border: #2e2e2e;
     --shadow-premium: 0 4px 14px rgba(212, 175, 55, 0.12);
     --color-gold-light: rgba(212, 175, 55, 0.151);
-    --color-btn-proyecto: #c0c0c0;
 }
 
 * {
@@ -311,7 +308,7 @@ header a:hover {
 }
 
 .btn-proyecto:hover {
-    background-color: var(--color-btn-proyecto);
+    background-color: #c0c0c0;
     transition: background-color 0.3s ease;
 }
 
@@ -643,16 +640,15 @@ strong {
 }
 
 /* ==========================================================================
-   7. SECCIÓN PROYECTOS Y TARJETAS
+    7. SECCIÓN PROYECTOS Y TARJETAS
    ========================================================================== */
 .line-projects {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding-top: 15px;
     padding-bottom: 25px;
 }
-
 
 .project::before {
     content: "↗";
@@ -701,6 +697,15 @@ strong {
 .project:nth-child(3)>.img {
     background: linear-gradient(135deg,
             #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
+}
+
+.project:nth-child(4) > .img {
+    background-color: #0B1412;
+    background-image:
+        linear-gradient(rgba(74, 222, 128, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 222, 128, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.12), transparent 55%);
+    background-size: 20px 20px, 20px 20px, 100% 100%;
 }
 
 .img {
@@ -894,6 +899,15 @@ footer {
 #modal-seguridad>.img {
     background: linear-gradient(135deg,
             #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
+}
+
+#modal-fitbalance > .img {
+    background-color: #0B1412;
+    background-image:
+        linear-gradient(rgba(74, 222, 128, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 222, 128, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(74, 222, 128, 0.12), transparent 55%);
+    background-size: 20px 20px, 20px 20px, 100% 100%;
 }
 
 .titulo {
@@ -1229,10 +1243,14 @@ a:focus-visible,
         width: 100%;
     }
 
-    /* --- Skills y Proyectos: 2 columnas --- */
-    .container-skills,
-    .line-projects {
+    /* --- Skills: 2 columnas --- */
+    .container-skills {
         flex-wrap: wrap;
+    }
+
+    /* --- Proyectos: 1 columna --- */
+    .line-projects{
+        grid-template-columns: 1fr;
     }
 
     .skill {
