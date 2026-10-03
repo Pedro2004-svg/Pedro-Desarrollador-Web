@@ -11,6 +11,7 @@ const main = document.getElementById("carga-pagina");
 const overlay_gns3 = document.getElementById("overlay-gns3");
 const overlay_keystore = document.getElementById("overlay-keystore");
 const overlay_seguridad = document.getElementById("overlay-seguridad");
+const overlay_fitbalance = document.getElementById("overlay-fitbalance");
 const header = document.getElementById("header");
 
 const opciones = {
@@ -107,6 +108,25 @@ document.addEventListener("click", (e) => {
     if (activa) activa.classList.remove("activa");
     overlay_seguridad.classList.add("activa");
     activa = overlay_seguridad;
+    main.classList.add("modal-activa");
+    header.style.animation = "slideIn 0.3s ease forwards";
+    bloquearScroll();
+
+    header.addEventListener(
+      "animationend",
+      () => {
+        header.style.display = "none";
+        header.style.animation = "";
+      },
+      { once: true },
+    );
+    return;
+  }
+
+    if (document.getElementById("Fitbalance").contains(e.target)) {
+    if (activa) activa.classList.remove("activa");
+    overlay_fitbalance.classList.add("activa");
+    activa = overlay_fitbalance;
     main.classList.add("modal-activa");
     header.style.animation = "slideIn 0.3s ease forwards";
     bloquearScroll();

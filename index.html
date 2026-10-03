@@ -96,7 +96,7 @@
                             </div>
                             <div class="btn-inicio">
                                 <a href="#proyectos" class="btn-proyecto">Ver Proyectos</a>
-                                <a href="cv/Pedro Perez - CV.pdf" class="btn-cv" download>Descargar CV</a>
+                                <a href="cv/Pedro_Perez_Picazo_CV.pdf" class="btn-cv" download>Descargar CV</a>
                             </div>
                         </div>
                         <div class="stats-inicio">
@@ -360,6 +360,22 @@
                         </div>
                     </div>
 
+                    <div class="project" id="Fitbalance">
+                        <div class="img">
+                            <img src="img/Img-Fitbalance.png" alt="Logo calculadora, con bol de frutas y ficha con kcal">
+                        </div>
+                        <div class="project-text">
+                            <h3>FitBalance</h3>
+                            <p>Aplicación de Escritorio para el seguimiento calórico y el balance calórico diario.</p>
+                            <div class="stats">
+                                <span>Rust</span>
+                                <span>Axum</span>
+                                <span>SQLx</span>
+                            </div>
+                            <p class="ver_mas">Ver más ↗</p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
             <section id="formacion" class="oculto">
@@ -614,6 +630,67 @@
                         <li><i class="ti ti-check"></i>Compilacion de Rust a WebAssembly</li>
                         <li><i class="ti ti-check"></i>Integración de módulos WASM con JavaScript</li>
                         <li><i class="ti ti-check"></i>Algoritmos de hashing y su uso en ciberseguridad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="overlay" id="overlay-fitbalance">
+        <div class="modal" id="modal-fitbalance">
+            <div class="img">
+                <img src="img/Img-Fitbalance.png" alt="Logo calculadora, con bol de frutas y ficha con kcal">
+            </div>
+            <button class="modal-close" id="close-fitbalance"><i class="ti ti-x"></i></button>
+            <div class="text-modal">
+                <div class="titulo">
+                    <p><b>Fitbalance</b></p>
+                    <div class="stats">
+                            <span>Rust</span>
+                            <span>Axum</span>
+                            <span>SQLx</span>
+                            <div class="repo">
+                                <a href="https://github.com/Pedro2004-svg/Pedro-FitBalance.git" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github"></i> Ver Github</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="descripcion-modal">
+                    <p>
+                        FitBalance es una aplicación de escritorio para el seguimiento de la alimentación y el balance calórico diario. El proyecto está desarrollado íntegramente en Rust 
+                        y se divide en dos aplicaciones: una API REST desarrollada con Axum, encargada de la lógica de negocio, autenticación y acceso a PostgreSQL, y una aplicación de 
+                        escritorio desarrollada con egui, desde la que el usuario puede gestionar sus alimentos y consultar su balance calórico.
+                    </p>
+                </div>
+                <div class="modal-stats">
+                    <div class="stats-modal">
+                        <i class="ti ti-user"></i>
+                        <p><b>Autenticación</b></p>
+                        <p>Registro, inicio de sesión y verificación de usuarios</p>
+                    </div>
+
+                    <div class="stats-modal">
+                        <i class="ti ti-calculator"></i>
+                        <p><b>Balance calórico</b></p>
+                        <p>Control de calorías consumidas y estimación del gasto diario</p>
+                    </div>
+
+                    <div class="stats-modal">
+                        <i class="ti ti-chart-line"></i>
+                        <p><b>Seguimineto</b></p>
+                        <p>Resumen semanal de alimentación y balance calórico</p>
+                    </div>
+                </div>
+                <div class="section-divider">
+                    <div class="line-modal"></div>
+                </div>
+                <div class="aprendi-modal">
+                    <p><b>Lo que aprendi</b></p>
+                    <ul>
+                        <li><i class="ti ti-check"></i>Desarrollar una API REST con Rust utilizando Axum</li>
+                        <li><i class="ti ti-check"></i>Trabajar con PostgreSQL mediante SQLx y gestionar datos de usuarios</li>
+                        <li><i class="ti ti-check"></i>Implementar autenticacón con JWT y hashing de contraseñas con Argon2</li>
                     </ul>
                 </div>
             </div>
