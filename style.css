@@ -681,7 +681,7 @@ strong {
     transform: translateY(0) scale(1);
 }
 
-.project:nth-child(1)>.img {
+.project:nth-child(4)>.img {
     background-color: #0B0D12;
     background-image:
         linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
@@ -689,7 +689,7 @@ strong {
     background-size: 20px 20px;
 }
 
-.project:nth-child(2)>.img {
+.project:nth-child(1)>.img {
     background-color: #F5F5F5;
     background-image: repeating-linear-gradient(45deg, #F5F5F5, #F5F5F5 10px, #EAEAEA 10px, #EAEAEA 20px);
 }
@@ -699,7 +699,7 @@ strong {
             #C59334 0%, #E2B653 20%, #F9D976 40%, #E2B653 60%, #C59334 80%, #A67B27 100%);
 }
 
-.project:nth-child(4) > .img {
+.project:nth-child(2) > .img {
     background-color: #0B1412;
     background-image:
         linear-gradient(rgba(74, 222, 128, 0.06) 1px, transparent 1px),
